@@ -1866,6 +1866,86 @@ body:before{
 @media (prefers-reduced-motion: reduce){
   .nearby-btn.is-loading .nearby-btn-icon{animation:none!important}
 }
+</style><style>
+/* ===== SUNSEE form submit success overlay ===== */
+.sunsee-submit-success{
+  position:fixed;inset:0;z-index:5000;display:grid;place-items:center;padding:22px;
+  background:rgba(63,43,27,.22);backdrop-filter:blur(8px);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .32s ease,visibility .32s ease;
+}
+.sunsee-submit-success.is-show{opacity:1;visibility:visible;pointer-events:auto}
+.sunsee-submit-success-card{
+  width:min(100%,430px);padding:30px 28px 27px;display:flex;align-items:center;gap:17px;
+  border-radius:26px;border:1px solid rgba(197,145,74,.20);
+  background:radial-gradient(circle at 86% 12%,rgba(237,208,158,.22),transparent 28%),#fffdf9;
+  box-shadow:0 24px 70px rgba(73,48,30,.18);
+  transform:translateY(12px) scale(.985);
+  transition:transform .38s cubic-bezier(.2,.75,.22,1);
+}
+.sunsee-submit-success.is-show .sunsee-submit-success-card{transform:none}
+.sunsee-success-mark{
+  flex:0 0 52px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,#bd8740,#dfb56e);color:#fff;font-size:23px;font-weight:900;
+  box-shadow:0 10px 25px rgba(189,135,64,.22)
+}
+.sunsee-success-copy{display:grid;gap:2px}
+.sunsee-success-copy strong{color:var(--ink);font-size:21px;line-height:1.4}
+.sunsee-success-copy span{color:#72553c;font-size:14px;font-weight:700}
+.sunsee-success-copy small{margin-top:5px;color:var(--muted);font-size:11px}
+@media(max-width:560px){
+  .sunsee-submit-success-card{padding:25px 21px;border-radius:22px}
+  .sunsee-success-mark{flex-basis:46px;width:46px;height:46px}
+  .sunsee-success-copy strong{font-size:19px}
+}
+</style><style>
+/* ===== SUNSEE local form guard ===== */
+.sunsee-local-form-warning{
+  position:fixed;inset:0;z-index:5200;display:grid;place-items:center;padding:22px;
+  background:rgba(63,43,27,.25);backdrop-filter:blur(8px);
+  opacity:0;visibility:hidden;pointer-events:none;transition:.28s ease;
+}
+.sunsee-local-form-warning.is-show{opacity:1;visibility:visible;pointer-events:auto}
+.sunsee-local-form-warning-card{
+  width:min(100%,500px);display:flex;gap:16px;align-items:flex-start;
+  padding:26px;border-radius:24px;background:#fffdf9;border:1px solid rgba(197,145,74,.22);
+  box-shadow:0 24px 70px rgba(73,48,30,.20);
+}
+.sunsee-local-warning-icon{
+  flex:0 0 44px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  background:#f3e1c5;color:#8b6030;font-size:22px;font-weight:900;
+}
+.sunsee-local-form-warning strong{display:block;font-size:19px;margin-bottom:6px}
+.sunsee-local-form-warning p{margin:0 0 15px;color:var(--muted);font-size:14px;line-height:1.7}
+.sunsee-local-form-warning button{
+  border:0;border-radius:999px;padding:10px 16px;background:linear-gradient(135deg,#bd8740,#dfb56e);
+  color:#fff;font-weight:800;cursor:pointer
+}
+@media(max-width:560px){
+  .sunsee-local-form-warning-card{padding:22px 18px}
+}
+</style><style>
+/* ===== SUNSEE AJAX form states ===== */
+.sunsee-ajax-status{
+  min-height:19px;
+  margin-top:8px;
+  text-align:center;
+  font-size:12px;
+  line-height:1.55;
+  color:var(--muted);
+}
+.sunsee-ajax-status.is-error{
+  color:#9b4f42;
+  font-weight:700;
+}
+.sunsee-ajax-status.is-success{
+  color:#7f633e;
+  font-weight:700;
+}
+#sunseeFormSubmit.is-loading{
+  opacity:.72;
+  cursor:wait;
+}
 </style></head>
 <body><div aria-label="SUNSEE 微光合作店家公告" class="sunsee-top-notice" role="note">
 <div class="sunsee-top-notice-inner">
@@ -2244,11 +2324,10 @@ body:before{
 <span>✦ 其他公益合作提案</span>
 </div>
 </div>
-<form action="https://formsubmit.co/sunseeus@gmail.com" class="sunsee-form" method="POST">
+<form action="https://formsubmit.co/sunseeus@gmail.com" class="sunsee-form" id="sunseeContactForm" method="POST"><input name="_url" type="hidden" value="https://sunsee.tw/"/>
 <input name="_subject" type="hidden" value="SUNSEE 官網｜新的合作申請"/>
 <input name="_template" type="hidden" value="table"/>
-<input name="_captcha" type="hidden" value="false"/>
-<input name="_next" type="hidden" value="https://sunsee.tw/?submitted=1#participate"/>
+
 <input name="_honey" style="display:none" type="text"/>
 <div class="form-row two">
 <label>
@@ -2288,8 +2367,8 @@ body:before{
 <input required="" type="checkbox"/>
 <span>我同意 SUNSEE 使用以上資料與我聯繫本次合作事宜。</span>
 </label>
-<button class="btn primary form-submit" type="submit">送出合作申請</button>
-<p class="form-note">SUNSEE 不代收店家待用餐或公益款項；合作內容與提供方式由合作方自行決定。</p>
+<button class="btn primary form-submit" id="sunseeFormSubmit" type="submit">送出合作申請</button><div aria-live="polite" class="sunsee-ajax-status" id="sunseeAjaxStatus" role="status"></div>
+<p class="form-note">表單會在 SUNSEE 頁面內直接送出，不會跳離網站。第一次正式啟用 FormSubmit 時，收件信箱仍需完成一次確認。</p>
 </form>
 </div></div>
 </section>
@@ -2688,5 +2767,172 @@ if(nearbyBtn){
   track.addEventListener('pointercancel', endDrag);
 })();
 </script>
-</body>
+<div aria-hidden="true" aria-live="polite" class="sunsee-submit-success" id="sunseeSubmitSuccess" role="status">
+<div class="sunsee-submit-success-card">
+<div class="sunsee-success-mark">✓</div>
+<div class="sunsee-success-copy">
+<strong>已送出表單</strong>
+<span>後續會有專人與您聯繫</span>
+<small>即將回到善・行首頁</small>
+</div>
+</div>
+</div><div aria-hidden="true" class="sunsee-local-form-warning" id="sunseeLocalFormWarning">
+<div class="sunsee-local-form-warning-card">
+<div class="sunsee-local-warning-icon">!</div>
+<div>
+<strong>本機 HTML 無法直接送出表單</strong>
+<p>請將這份 HTML 上傳到 SUNSEE 正式網站後，再到 <b>https://sunsee.tw/</b> 測試送出。</p>
+<button id="closeLocalFormWarning" type="button">我知道了</button>
+</div>
+</div>
+</div><script>
+/* SUNSEE_LOCAL_FORM_GUARD */
+(function(){
+  const form=document.querySelector('.sunsee-form');
+  const box=document.getElementById('sunseeLocalFormWarning');
+  const closeBtn=document.getElementById('closeLocalFormWarning');
+  if(!form || !box) return;
+
+  const isLocalFile = window.location.protocol === 'file:';
+
+  if(isLocalFile){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      box.classList.add('is-show');
+      box.setAttribute('aria-hidden','false');
+    });
+  }
+
+  if(closeBtn){
+    closeBtn.addEventListener('click',function(){
+      box.classList.remove('is-show');
+      box.setAttribute('aria-hidden','true');
+    });
+  }
+})();
+</script><script>
+/* SUNSEE_AJAX_FORM_SUBMIT */
+(function(){
+  const form=document.getElementById('sunseeContactForm');
+  const submitBtn=document.getElementById('sunseeFormSubmit');
+  const statusBox=document.getElementById('sunseeAjaxStatus');
+  const successOverlay=document.getElementById('sunseeSubmitSuccess');
+
+  if(!form || !submitBtn) return;
+
+  const originalButtonText=submitBtn.tagName==='INPUT'
+    ? submitBtn.value
+    : submitBtn.innerHTML;
+
+  function setButtonText(text){
+    if(submitBtn.tagName==='INPUT') submitBtn.value=text;
+    else submitBtn.innerHTML=text;
+  }
+
+  function setStatus(message,type){
+    if(!statusBox) return;
+    statusBox.textContent=message || '';
+    statusBox.classList.remove('is-error','is-success');
+    if(type) statusBox.classList.add(type);
+  }
+
+  function showSuccess(){
+    if(successOverlay){
+      successOverlay.classList.add('is-show');
+      successOverlay.setAttribute('aria-hidden','false');
+    }
+
+    window.setTimeout(()=>{
+      if(successOverlay){
+        successOverlay.classList.remove('is-show');
+        successOverlay.setAttribute('aria-hidden','true');
+      }
+      window.scrollTo({top:0,left:0,behavior:'smooth'});
+      try{
+        history.replaceState({},document.title,window.location.pathname || '/');
+      }catch(_){}
+    },2200);
+  }
+
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+
+    // FormSubmit does not accept pages opened directly as file://.
+    if(window.location.protocol==='file:'){
+      const localWarning=document.getElementById('sunseeLocalFormWarning');
+      if(localWarning){
+        localWarning.classList.add('is-show');
+        localWarning.setAttribute('aria-hidden','false');
+      }else{
+        setStatus('請先將網站上傳到 https://sunsee.tw/ 再測試送出。','is-error');
+      }
+      return;
+    }
+
+    if(!form.reportValidity()) return;
+
+    submitBtn.disabled=true;
+    submitBtn.classList.add('is-loading');
+    setButtonText('送出中…');
+    setStatus('正在送出表單，請稍候。');
+
+    try{
+      const fd=new FormData(form);
+      const payload={};
+
+      for(const [key,value] of fd.entries()){
+        if(key==='_honey' && value) {
+          // Honeypot filled: silently stop.
+          throw new Error('spam');
+        }
+
+        if(Object.prototype.hasOwnProperty.call(payload,key)){
+          if(!Array.isArray(payload[key])) payload[key]=[payload[key]];
+          payload[key].push(value);
+        }else{
+          payload[key]=value;
+        }
+      }
+
+      // Ensure FormSubmit knows the live source URL.
+      payload._url='https://sunsee.tw/';
+      payload._subject='SUNSEE 官網｜新的合作申請';
+      payload._template='table';
+
+      const response=await fetch('https://formsubmit.co/ajax/sunseeus@gmail.com',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+          'Accept':'application/json'
+        },
+        body:JSON.stringify(payload)
+      });
+
+      let data={};
+      try{
+        data=await response.json();
+      }catch(_){}
+
+      if(!response.ok){
+        throw new Error((data && data.message) || 'submit_failed');
+      }
+
+      form.reset();
+      setStatus('已成功送出。','is-success');
+      showSuccess();
+
+    }catch(err){
+      if(err && err.message==='spam'){
+        setStatus('無法送出表單，請重新整理後再試。','is-error');
+      }else{
+        setStatus('目前送出失敗，請稍後再試；若持續失敗，可直接聯繫 SUNSEE。','is-error');
+      }
+    }finally{
+      submitBtn.disabled=false;
+      submitBtn.classList.remove('is-loading');
+      setButtonText(originalButtonText);
+    }
+  });
+})();
+</script></body>
 </html>
