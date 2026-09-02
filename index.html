@@ -1946,7 +1946,92 @@ body:before{
   opacity:.72;
   cursor:wait;
 }
-</style></head>
+</style>
+<style>
+/* ===== Marché Pâtisserie official Instagram food cover ===== */
+.shop-card-static{
+  display:block;
+  height:100%;
+}
+.marche-shop-card{
+  position:relative;
+}
+.shop-ig-cover{
+  position:relative;
+  height:190px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(233,210,180,.38),transparent 48%),
+    #f4eadf;
+}
+.shop-ig-embed-stage{
+  position:absolute;
+  left:50%;
+  top:0;
+  width:540px;
+  height:560px;
+  overflow:visible;
+  pointer-events:none;
+  transform:
+    translateX(-50%)
+    translateY(-145px)
+    scale(.67);
+  transform-origin:top center;
+}
+.shop-ig-embed-stage .instagram-media{
+  width:540px!important;
+  min-width:540px!important;
+  max-width:540px!important;
+  margin:0!important;
+}
+.shop-ig-cover:after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:38%;
+  pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(40,26,15,.48));
+}
+.ig-real-photo-label{
+  position:absolute;
+  right:12px;
+  top:12px;
+  z-index:4;
+  padding:5px 9px;
+  border-radius:999px;
+  border:1px solid rgba(197,145,74,.18);
+  background:rgba(255,252,246,.93);
+  color:#895f31;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.04em;
+}
+.marche-shop-actions{
+  align-items:center;
+}
+.shop-mini-btn.detail-direct{
+  border-color:#c5914a;
+  background:linear-gradient(135deg,#c18b43,#dcae69);
+  color:#fff;
+  box-shadow:0 8px 20px rgba(166,111,48,.13);
+}
+.shop-mini-btn.detail-direct:hover{
+  transform:translateY(-1px);
+}
+@media(max-width:640px){
+  .shop-ig-embed-stage{
+    transform:
+      translateX(-50%)
+      translateY(-145px)
+      scale(.72);
+  }
+  .marche-shop-actions .shop-mini-btn{
+    width:100%;
+  }
+}
+</style>
+
+</head>
 <body><div aria-label="SUNSEE 微光合作店家公告" class="sunsee-top-notice" role="note">
 <div class="sunsee-top-notice-inner">
 <span class="sunsee-top-notice-mark">✦</span>
@@ -2404,7 +2489,7 @@ const SHOP_DATA=[
  },
  {
    city:'台中市',
-   name:'CHUN Marché Pâtisserie 市集 ‧ 甜點&咖啡',
+   name:'Marché Pâtisserie',
    type:'法式甜點・咖啡',
    desc:'一間把甜點、咖啡與舒服日常放在一起的小空間。待用餐、愛心份量或公益合作方式，由店家自行決定。',
    status:'待用餐／愛心份量請直接與店家聯繫確認',
@@ -2413,7 +2498,10 @@ const SHOP_DATA=[
    ig:'https://www.instagram.com/marche_patisserie_taichung/',
    igHandle:'@marche_patisserie_taichung',
    photoLink:'https://www.instagram.com/marche_patisserie_taichung/',
-   img:'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1200&q=80'
+   detailPage:'marche-patisserie.html',
+   embedInstagram:true,
+   embedUrl:'https://www.instagram.com/marche_patisserie_taichung/',
+   img:''
  },
  {
    city:'新北市',
@@ -2566,35 +2654,97 @@ function render(city=activeCity){
     });
   }
 
-  grid.innerHTML=rows.map(s=>`
-  <article class="shop-card ${nearbyMode?'nearby-result':''}">
-    <a class="shop-card-link" href="${s.ig}" target="_blank" rel="noopener" aria-label="前往 ${s.name} 官方 Instagram">
-      <div class="shop-visual">
-        <img src="${s.img}" alt="${s.name} 類型情境照片" loading="lazy">
-        <span class="demo-label">${nearbyMode && s.distance!=null ? `距離 ${formatDistance(s.distance)}` : '微光合作店家'}</span>
-        <span class="shop-photo-city">${s.city}・SUNSEE</span>
-      </div>
-      <div class="shop-body">
-        <div class="shop-heading-row">
-          <span class="shop-city">${s.city}</span>
-          ${nearbyMode && s.distance!=null ? `<span class="distance-pill">⌖ ${formatDistance(s.distance)}</span>` : ''}
+  grid.innerHTML=rows.map(s=>{
+    const distanceBadge=nearbyMode && s.distance!=null
+      ? `距離 ${formatDistance(s.distance)}`
+      : '微光合作店家';
+
+    if(s.embedInstagram){
+      return `
+      <article class="shop-card marche-shop-card ${nearbyMode?'nearby-result':''}">
+        <div class="shop-card-static">
+
+          <div class="shop-visual shop-ig-cover" aria-label="${s.name} 官方 Instagram 食品貼文">
+            <div class="shop-ig-embed-stage">
+              <blockquote
+                class="instagram-media"
+                data-instgrm-permalink="${s.embedUrl}"
+                data-instgrm-version="14"
+                style="background:#fff;border:0;margin:0;max-width:540px;min-width:540px;padding:0;width:540px;">
+              </blockquote>
+            </div>
+            <span class="demo-label">${distanceBadge}</span>
+            <span class="shop-photo-city">${s.city}・SUNSEE</span>
+            <span class="ig-real-photo-label">店家官方 IG 實際貼文</span>
+          </div>
+
+          <div class="shop-body">
+            <div class="shop-heading-row">
+              <span class="shop-city">${s.city}</span>
+              ${nearbyMode && s.distance!=null ? `<span class="distance-pill">⌖ ${formatDistance(s.distance)}</span>` : ''}
+            </div>
+
+            <h3>${s.name}</h3>
+            <p><strong>${s.type}</strong><br>${s.desc}</p>
+
+            <div class="shop-contact">
+              <span>⌖ ${s.address}</span>
+              <span>☎ ${s.contact}</span>
+            </div>
+
+            <div class="status">✦ ${s.status}</div>
+
+            <div class="shop-actions marche-shop-actions">
+              <a class="shop-mini-btn detail-direct" href="${s.detailPage}" aria-label="查看 ${s.name} 微光店家專屬頁">
+                ✦ 查看微光頁
+              </a>
+              <a class="shop-mini-btn ig-direct" href="${s.ig}" target="_blank" rel="noopener" aria-label="前往 ${s.name} 官方 Instagram">
+                ◎ 官方 IG｜${s.igHandle} →
+              </a>
+            </div>
+          </div>
+
         </div>
-        <h3>${s.name}</h3>
-        <p><strong>${s.type}</strong><br>${s.desc}</p>
-        <div class="shop-contact">
-          <span>⌖ ${s.address}</span>
-          <span>☎ ${s.contact}</span>
+      </article>`;
+    }
+
+    return `
+    <article class="shop-card ${nearbyMode?'nearby-result':''}">
+      <a class="shop-card-link" href="${s.ig}" target="_blank" rel="noopener" aria-label="前往 ${s.name} 官方 Instagram">
+        <div class="shop-visual">
+          <img src="${s.img}" alt="${s.name} 類型情境照片" loading="lazy">
+          <span class="demo-label">${distanceBadge}</span>
+          <span class="shop-photo-city">${s.city}・SUNSEE</span>
         </div>
-        <div class="status">✦ ${s.status}</div>
-        <div class="shop-actions">
-          <span class="shop-mini-btn ig-direct">◎ 官方 IG｜${s.igHandle} →</span>
+        <div class="shop-body">
+          <div class="shop-heading-row">
+            <span class="shop-city">${s.city}</span>
+            ${nearbyMode && s.distance!=null ? `<span class="distance-pill">⌖ ${formatDistance(s.distance)}</span>` : ''}
+          </div>
+          <h3>${s.name}</h3>
+          <p><strong>${s.type}</strong><br>${s.desc}</p>
+          <div class="shop-contact">
+            <span>⌖ ${s.address}</span>
+            <span>☎ ${s.contact}</span>
+          </div>
+          <div class="status">✦ ${s.status}</div>
+          <div class="shop-actions">
+            <span class="shop-mini-btn ig-direct">◎ 官方 IG｜${s.igHandle} →</span>
+          </div>
         </div>
-      </div>
-    </a>
-  </article>`).join('');
+      </a>
+    </article>`;
+  }).join('');
 
   grid.style.display=rows.length?'grid':'none';
   empty.style.display=rows.length?'none':'block';
+
+  /* 店家篩選或附近排序後，重新處理 Instagram 官方嵌入內容。 */
+  window.setTimeout(()=>{
+    if(window.instgrm && window.instgrm.Embeds){
+      window.instgrm.Embeds.process();
+    }
+  },80);
 }
 
 render();
@@ -2946,5 +3096,6 @@ if(nearbyBtn){
     }
   });
 })();
-</script></body>
+</script><script async src="https://www.instagram.com/embed.js"></script>
+</body>
 </html>
