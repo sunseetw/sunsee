@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#fbf7f0" name="theme-color"/>
+<title>Marché Pâtisserie｜SUNSEE 微光合作店家</title>
+<meta content="Marché Pâtisserie 市集・甜點＆咖啡｜SUNSEE 微光合作店家。查看店家官方 Instagram、地址、導航與微光合作資訊。" name="description"/>
+<link href="https://sunsee.tw/shop/marche-patisserie-taichung/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Marché Pâtisserie｜SUNSEE 微光合作店家" property="og:title"/>
+<meta content="讓願意做好事的店家被看見。查看 Marché Pâtisserie 的官方 IG 與微光合作資訊。" property="og:description"/>
+<meta content="https://sunsee.tw/shop/marche-patisserie-taichung/" property="og:url"/>
+<meta content="SUNSEE 善・行｜微光公益計畫" property="og:site_name"/>
+<style>
+:root{
+  --bg:#fbf7f0;
+  --paper:#fffdf8;
+  --ink:#4e3828;
+  --muted:#826c59;
+  --gold:#b98649;
+  --gold2:#dfbd86;
+  --soft:#f4e8d8;
+  --line:rgba(155,111,65,.18);
+  --shadow:0 24px 70px rgba(77,53,35,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  background:
+    radial-gradient(circle at 8% 0,rgba(232,201,157,.27),transparent 24%),
+    radial-gradient(circle at 95% 16%,rgba(244,221,187,.38),transparent 19%),
+    var(--bg);
+  line-height:1.7
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1120px,calc(100% - 36px));margin:auto}
+
+/* Header */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,247,240,.88);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)
+}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.14em}
+.brandmark{
+  width:35px;height:35px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(185,134,73,.42);background:#fffaf2;color:var(--gold)
+}
+.brand small{display:block;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.06em}
+.navlinks{display:flex;gap:8px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;
+  border-radius:999px;border:1px solid var(--line);background:#fffaf3;
+  font-size:12px;font-weight:850
+}
+.btn.primary{color:#fff;border:0;background:linear-gradient(135deg,var(--gold),var(--gold2))}
+
+/* Hero */
+.hero{padding:30px 0 28px}
+.hero-shell{
+  display:grid;grid-template-columns:.88fr 1.12fr;overflow:hidden;
+  min-height:620px;border:1px solid var(--line);border-radius:30px;
+  background:var(--paper);box-shadow:var(--shadow)
+}
+.hero-copy{
+  padding:56px 44px;display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden
+}
+.hero-copy:before{
+  content:"";position:absolute;width:310px;height:310px;border-radius:50%;
+  background:radial-gradient(circle,rgba(224,188,134,.24),transparent 68%);
+  left:-130px;top:-95px
+}
+.eyebrow{
+  position:relative;z-index:1;color:var(--gold);font-size:11px;font-weight:900;letter-spacing:.18em
+}
+.hero h1{
+  position:relative;z-index:1;font-family:Georgia,"Noto Serif TC",serif;
+  font-size:clamp(38px,5.6vw,64px);line-height:1.08;margin:15px 0 14px;letter-spacing:-.025em
+}
+.hero-lead{position:relative;z-index:1;color:var(--muted);font-size:15px;margin:0 0 20px}
+.tags{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tag{padding:6px 10px;border-radius:999px;background:var(--soft);font-size:11px;font-weight:800;color:#76583c}
+.hero-actions{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:9px}
+.hero-note{
+  position:relative;z-index:1;margin-top:27px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:11px;color:var(--muted)
+}
+
+/* Official Instagram live area */
+.ig-live{
+  background:linear-gradient(145deg,#eee1d1,#f7efe5);
+  display:flex;align-items:center;justify-content:center;padding:26px;position:relative
+}
+.ig-live:before{
+  content:"官方 Instagram 即時內容";position:absolute;left:24px;top:20px;z-index:3;
+  padding:6px 10px;border-radius:999px;background:rgba(255,253,248,.9);
+  border:1px solid var(--line);font-size:10px;font-weight:900;color:var(--gold)
+}
+.ig-frame{
+  width:min(100%,560px);min-height:535px;display:flex;align-items:center;justify-content:center
+}
+.instagram-media{
+  margin:0 auto!important;min-width:0!important;width:100%!important;max-width:540px!important
+}
+.ig-fallback{
+  display:none;width:100%;max-width:480px;text-align:center;padding:40px 25px;
+  border-radius:24px;background:rgba(255,253,248,.92);border:1px solid var(--line)
+}
+.ig-fallback strong{display:block;font-size:21px;margin-bottom:8px}
+.ig-fallback p{font-size:12px;color:var(--muted);margin:0 0 16px}
+
+/* Sections */
+.section{padding:52px 0}
+.section h2{
+  font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(27px,4vw,40px);
+  line-height:1.2;margin:8px 0 10px
+}
+.lead{color:var(--muted);max-width:760px;margin:0}
+.grid2{display:grid;grid-template-columns:1.06fr .94fr;gap:22px;margin-top:25px}
+.card{
+  padding:25px;border-radius:24px;background:rgba(255,253,248,.91);
+  border:1px solid var(--line);box-shadow:0 14px 42px rgba(77,53,35,.05)
+}
+.card p{margin:0;color:#705947}
+.card p+p{margin-top:13px}
+.info{display:grid;gap:13px}
+.row{display:grid;grid-template-columns:82px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.row:last-child{border:0;padding-bottom:0}
+.row b{color:var(--gold);font-size:12px}
+.row span{font-size:13px;color:#654f3f}
+.actionrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+
+/* Support */
+.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.support{
+  border-radius:20px;padding:21px;background:rgba(255,253,248,.92);border:1px solid var(--line)
+}
+.no{
+  width:35px;height:35px;display:grid;place-items:center;border-radius:50%;
+  background:var(--soft);color:var(--gold);font-size:11px;font-weight:900;margin-bottom:13px
+}
+.support h3{margin:0 0 5px;font-size:16px}
+.support p{margin:0;color:var(--muted);font-size:12px}
+
+/* Instagram section */
+.ig-section{
+  margin-top:24px;padding:25px;border-radius:25px;
+  background:linear-gradient(135deg,#fffaf3,#f5e9da);border:1px solid rgba(185,134,73,.22)
+}
+.ig-section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+.ig-section-head h3{margin:0;font-size:20px}
+.ig-section-head p{margin:3px 0 0;color:var(--muted);font-size:11px}
+.ig-profile-link{
+  flex:0 0 auto;padding:8px 12px;border-radius:999px;background:#fffdf8;
+  border:1px solid var(--line);color:var(--gold);font-size:11px;font-weight:850
+}
+
+/* Footer */
+.notice{
+  margin-top:22px;padding:14px 16px;border-radius:15px;background:rgba(255,253,248,.8);
+  border:1px solid var(--line);font-size:11px;color:var(--muted)
+}
+footer{padding:43px 0 54px;text-align:center;color:var(--muted)}
+footer strong{display:block;color:var(--ink);font-size:16px}
+footer small{font-size:10px}
+
+@media(max-width:860px){
+  .hero-shell,.grid2,.badge-grid{grid-template-columns:1fr}
+  .hero-copy{padding:42px 28px}
+  .ig-live{min-height:560px}
+  .support-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .container{width:min(100% - 24px,1120px)}
+  .nav{height:60px}
+  .brand{font-size:13px;letter-spacing:.08em}
+  .brand small{display:none}
+  .navlinks .btn:first-child{display:none}
+  .hero{padding-top:14px}
+  .hero-shell{border-radius:22px}
+  .hero-copy{padding:35px 22px 30px}
+  .ig-live{padding:48px 10px 18px;min-height:520px}
+  .ig-frame{min-height:480px}
+  .section{padding:42px 0}
+  .card,.ig-section{padding:20px}
+  .ig-section-head{align-items:flex-start;flex-direction:column}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CafeOrCoffeeShop",
+  "name":"Marché Pâtisserie 市集・甜點＆咖啡",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"山西路三段99號3F",
+    "addressLocality":"北屯區",
+    "addressRegion":"台中市",
+    "addressCountry":"TW"
+  },
+  "telephone":"+886-4-2422-0467",
+  "sameAs":["https://www.instagram.com/marche_patisserie_taichung/"]
+}
+</script>
+</head>
+<body>
+<header class="topbar">
+<div class="container nav">
+<a class="brand" href="https://sunsee.tw/">
+<span class="brandmark">☼</span>
+<span>SUNSEE <small>善・行｜微光公益計畫</small></span>
+</a>
+<div class="navlinks">
+<a class="btn" href="https://sunsee.tw/">回 SUNSEE</a>
+<a class="btn primary" href="#support">如何支持</a>
+</div>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="container">
+<div class="hero-shell">
+<div class="hero-copy">
+<div class="eyebrow">SUNSEE MICROGLOW SHOP</div>
+<h1>Marché<br/>Pâtisserie</h1>
+<p class="hero-lead">
+          市集・甜點＆咖啡｜台中市北屯區<br/>
+          讓一份日常消費，也能成為支持善意的一種方式。
+        </p>
+<div class="tags">
+<span class="tag">法式甜點</span>
+<span class="tag">咖啡</span>
+<span class="tag">SUNSEE 微光合作店家</span>
+</div>
+<div class="hero-actions">
+<a class="btn primary" href="https://www.instagram.com/marche_patisserie_taichung/" rel="noopener" target="_blank">看店家 IG</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%8C%97%E5%B1%AF%E5%8D%80%E5%B1%B1%E8%A5%BF%E8%B7%AF%E4%B8%89%E6%AE%B599%E8%99%9F3F" rel="noopener" target="_blank">導航到店家</a>
+</div>
+<div class="hero-note">
+          右側內容直接由 Instagram 提供。SUNSEE 不另外下載、重製或儲存店家的 IG 照片。
+        </div>
+</div>
+<div class="ig-live">
+<div class="ig-frame" id="igFrame">
+<!--
+            Instagram 官方公開內容嵌入。
+            使用店家公開 Profile URL，實際呈現內容由 Instagram 控制。
+          -->
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/marche_patisserie_taichung/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:16px;box-shadow:0 0 1px rgba(0,0,0,.2);margin:0;max-width:540px;min-width:0;padding:0;width:100%;">
+</blockquote>
+<div class="ig-fallback" id="igFallback">
+<strong>查看店家最新實際照片</strong>
+<p>Instagram 內容目前無法在此裝置直接載入，請前往店家官方帳號查看最新貼文。</p>
+<a class="btn primary" href="https://www.instagram.com/marche_patisserie_taichung/" rel="noopener" target="_blank">開啟 @marche_patisserie_taichung</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="eyebrow">ABOUT THIS MICROGLOW SHOP</div>
+<h2>一間店，也可以成為城市裡的一點微光。</h2>
+<p class="lead">
+      SUNSEE 把願意參與的店家整理成專屬微光頁，
+      讓一般人不只能看見公益，也能真正找到店家、認識店家、到店支持。
+    </p>
+<div class="grid2">
+<div class="card">
+<p>
+<strong>Marché Pâtisserie 市集・甜點＆咖啡</strong>
+          是 SUNSEE 收錄的微光合作店家。
+          這個頁面將店家的品牌資訊、官方 Instagram 與微光參與方式放在同一個地方。
+        </p>
+<p>
+          SUNSEE 不代收店家款項，也不替店家決定公益內容、份量或金額。
+          待用餐、愛心份量、公益商品或其他合作內容，皆以店家最新公告與現場說明為準。
+        </p>
+</div>
+<div class="card">
+<div class="info">
+<div class="row"><b>店家</b><span>Marché Pâtisserie 市集・甜點＆咖啡</span></div>
+<div class="row"><b>類型</b><span>法式甜點・咖啡</span></div>
+<div class="row"><b>地址</b><span>台中市北屯區山西路三段99號3F</span></div>
+<div class="row"><b>電話</b><span>04-2422-0467</span></div>
+<div class="row"><b>Instagram</b><span>@marche_patisserie_taichung</span></div>
+</div>
+<div class="actionrow">
+<a class="btn primary" href="https://www.instagram.com/marche_patisserie_taichung/" rel="noopener" target="_blank">看店家 IG</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%8C%97%E5%B1%AF%E5%8D%80%E5%B1%B1%E8%A5%BF%E8%B7%AF%E4%B8%89%E6%AE%B599%E8%99%9F3F" rel="noopener" target="_blank">Google Maps</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="support">
+<div class="container">
+<div class="eyebrow">HOW TO SUPPORT</div>
+<h2>今天，也可以用很簡單的方式支持這一點微光。</h2>
+<p class="lead">不一定要做很大的事。到店消費、詢問當期微光方式，或把店家分享出去，都是參與。</p>
+<div class="support-grid">
+<div class="support">
+<div class="no">01</div>
+<h3>到店支持</h3>
+<p>選擇願意參與微光行動的店家消費，讓公益與日常可以一起發生。</p>
+</div>
+<div class="support">
+<div class="no">02</div>
+<h3>詢問當期微光方式</h3>
+<p>待用餐、愛心份量、公益商品或其他內容，以店家的最新公告與現場資訊為準。</p>
+</div>
+<div class="support">
+<div class="no">03</div>
+<h3>分享給朋友</h3>
+<p>把這個微光頁或店家官方 Instagram 分享出去，讓願意做好事的店家被更多人看見。</p>
+</div>
+</div>
+<div class="ig-section">
+<div class="ig-section-head">
+<div>
+<h3>店家的最新樣子，直接看官方 Instagram</h3>
+<p>照片、甜點、活動與營業資訊皆由店家官方帳號更新。</p>
+</div>
+<a class="ig-profile-link" href="https://www.instagram.com/marche_patisserie_taichung/" rel="noopener" target="_blank">@marche_patisserie_taichung →</a>
+</div>
+<div class="notice">
+        為尊重照片來源，本頁不擷取或另存 Instagram 圖片；實際影像直接由 Instagram 官方嵌入內容提供。
+      </div>
+</div>
+</div>
+</section>
+
+</main>
+<footer>
+<div class="container">
+<strong>善意不一定很大，但願意開始，就能成為一束光。</strong>
+<small>© 2026 SUNSEE 善・行｜微光公益計畫｜讓善意被看見，讓微光持續發生。</small>
+</div>
+</footer>
+<!-- Instagram official embed loader -->
+<script async="" src="https://www.instagram.com/embed.js"></script>
+<script>
+/* Instagram graceful fallback */
+(function(){
+  const block=document.querySelector('.instagram-media');
+  const fallback=document.getElementById('igFallback');
+
+  setTimeout(()=>{
+    if(!block || !fallback) return;
+    const rendered=block.querySelector('iframe');
+    if(!rendered){
+      block.style.display='none';
+      fallback.style.display='block';
+    }
+  },6500);
+})();</script>
+</body>
+</html>
