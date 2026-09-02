@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#fbf7f0" name="theme-color"/>
+<title>Marché Pâtisserie｜SUNSEE 微光合作店家</title>
+<meta content="Marché Pâtisserie 市集・甜點＆咖啡｜SUNSEE 微光合作店家。查看店家官方 Instagram、地址、導航與微光合作資訊。" name="description"/>
+<link href="https://sunsee.tw/shop/marche-patisserie-taichung/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Marché Pâtisserie｜SUNSEE 微光合作店家" property="og:title"/>
+<meta content="讓願意做好事的店家被看見。查看 Marché Pâtisserie 的官方 IG 與微光合作資訊。" property="og:description"/>
+<meta content="https://sunsee.tw/shop/marche-patisserie-taichung/" property="og:url"/>
+<meta content="SUNSEE 善・行｜微光公益計畫" property="og:site_name"/>
+<style>
+:root{
+  --bg:#fbf7f0;
+  --paper:#fffdf8;
+  --ink:#4e3828;
+  --muted:#826c59;
+  --gold:#b98649;
+  --gold2:#dfbd86;
+  --soft:#f4e8d8;
+  --line:rgba(155,111,65,.18);
+  --shadow:0 24px 70px rgba(77,53,35,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  background:
+    radial-gradient(circle at 8% 0,rgba(232,201,157,.27),transparent 24%),
+    radial-gradient(circle at 95% 16%,rgba(244,221,187,.38),transparent 19%),
+    var(--bg);
+  line-height:1.7
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1120px,calc(100% - 36px));margin:auto}
+
+/* Header */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,247,240,.88);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)
+}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.14em}
+.brandmark{
+  width:35px;height:35px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(185,134,73,.42);background:#fffaf2;color:var(--gold)
+}
+.brand small{display:block;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.06em}
+.navlinks{display:flex;gap:8px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;
+  border-radius:999px;border:1px solid var(--line);background:#fffaf3;
+  font-size:12px;font-weight:850
+}
+.btn.primary{color:#fff;border:0;background:linear-gradient(135deg,var(--gold),var(--gold2))}
+
+/* Hero */
+.hero{padding:30px 0 28px}
+.hero-shell{
+  display:grid;grid-template-columns:.88fr 1.12fr;overflow:hidden;
+  min-height:620px;border:1px solid var(--line);border-radius:30px;
+  background:var(--paper);box-shadow:var(--shadow)
+}
+.hero-copy{
+  padding:56px 44px;display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden
+}
+.hero-copy:before{
+  content:"";position:absolute;width:310px;height:310px;border-radius:50%;
+  background:radial-gradient(circle,rgba(224,188,134,.24),transparent 68%);
+  left:-130px;top:-95px
+}
+.eyebrow{
+  position:relative;z-index:1;color:var(--gold);font-size:11px;font-weight:900;letter-spacing:.18em
+}
+.hero h1{
+  position:relative;z-index:1;font-family:Georgia,"Noto Serif TC",serif;
+  font-size:clamp(38px,5.6vw,64px);line-height:1.08;margin:15px 0 14px;letter-spacing:-.025em
+}
+.hero-lead{position:relative;z-index:1;color:var(--muted);font-size:15px;margin:0 0 20px}
+.tags{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tag{padding:6px 10px;border-radius:999px;background:var(--soft);font-size:11px;font-weight:800;color:#76583c}
+.hero-actions{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:9px}
+.hero-note{
+  position:relative;z-index:1;margin-top:27px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:11px;color:var(--muted)
+}
+
+/* Official Instagram live area */
+.ig-live{
+  background:linear-gradient(145deg,#eee1d1,#f7efe5);
+  display:flex;align-items:center;justify-content:center;padding:26px;position:relative
+}
+.ig-live:before{
+  content:"官方 Instagram 即時內容";position:absolute;left:24px;top:20px;z-index:3;
+  padding:6px 10px;border-radius:999px;background:rgba(255,253,248,.9);
+  border:1px solid var(--line);font-size:10px;font-weight:900;color:var(--gold)
+}
+.ig-frame{
+  width:min(100%,560px);min-height:535px;display:flex;align-items:center;justify-content:center
+}
+.instagram-media{
+  margin:0 auto!important;min-width:0!important;width:100%!important;max-width:540px!important
+}
+.ig-fallback{
+  display:none;width:100%;max-width:480px;text-align:center;padding:40px 25px;
+  border-radius:24px;background:rgba(255,253,248,.92);border:1px solid var(--line)
+}
+.ig-fallback strong{display:block;font-size:21px;margin-bottom:8px}
+.ig-fallback p{font-size:12px;color:var(--muted);margin:0 0 16px}
+
+/* Sections */
+.section{padding:52px 0}
+.section h2{
+  font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(27px,4vw,40px);
+  line-height:1.2;margin:8px 0 10px
+}
+.lead{color:var(--muted);max-width:760px;margin:0}
+.grid2{display:grid;grid-template-columns:1.06fr .94fr;gap:22px;margin-top:25px}
+.card{
+  padding:25px;border-radius:24px;background:rgba(255,253,248,.91);
+  border:1px solid var(--line);box-shadow:0 14px 42px rgba(77,53,35,.05)
+}
+.card p{margin:0;color:#705947}
+.card p+p{margin-top:13px}
+.info{display:grid;gap:13px}
+.row{display:grid;grid-template-columns:82px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px dashed var(--line)}
+.row:last-child{border:0;padding-bottom:0}
+.row b{color:var(--gold);font-size:12px}
+.row span{font-size:13px;color:#654f3f}
+.actionrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+
+/* Support */
+.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.support{
+  border-radius:20px;padding:21px;background:rgba(255,253,248,.92);border:1px solid var(--line)
+}
+.no{
+  width:35px;height:35px;display:grid;place-items:center;border-radius:50%;
+  background:var(--soft);color:var(--gold);font-size:11px;font-weight:900;margin-bottom:13px
+}
+.support h3{margin:0 0 5px;font-size:16px}
+.support p{margin:0;color:var(--muted);font-size:12px}
+
+/* Instagram section */
+.ig-section{
+  margin-top:24px;padding:25px;border-radius:25px;
+  background:linear-gradient(135deg,#fffaf3,#f5e9da);border:1px solid rgba(185,134,73,.22)
+}
+.ig-section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+.ig-section-head h3{margin:0;font-size:20px}
+.ig-section-head p{margin:3px 0 0;color:var(--muted);font-size:11px}
+.ig-profile-link{
+  flex:0 0 auto;padding:8px 12px;border-radius:999px;background:#fffdf8;
+  border:1px solid var(--line);color:var(--gold);font-size:11px;font-weight:850
+}
+
+/* Footer */
+.notice{
+  margin-top:22px;padding:14px 16px;border-radius:15px;background:rgba(255,253,248,.8);
+  border:1px solid var(--line);font-size:11px;color:var(--muted)
+}
+footer{padding:43px 0 54px;text-align:center;color:var(--muted)}
+footer strong{display:block;color:var(--ink);font-size:16px}
+footer small{font-size:10px}
+
+@media(max-width:860px){
+  .hero-shell,.grid2,.badge-grid{grid-template-columns:1fr}
+  .hero-copy{padding:42px 28px}
+  .ig-live{min-height:560px}
+  .support-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .container{width:min(100% - 24px,1120px)}
+  .nav{height:60px}
+  .brand{font-size:13px;letter-spacing:.08em}
+  .brand small{display:none}
+  .navlinks .btn:first-child{display:none}
+  .hero{padding-top:14px}
+  .hero-shell{border-radius:22px}
+  .hero-copy{padding:35px 22px 30px}
+  .ig-live{padding:48px 10px 18px;min-height:520px}
+  .ig-frame{min-height:480px}
+  .section{padding:42px 0}
+  .card,.ig-section{padding:20px}
+  .ig-section-head{align-items:flex-start;flex-direction:column}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CafeOrCoffeeShop",
+  "name":"Marché Pâtisserie 市集・甜點＆咖啡",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"山西路三段99號3F",
+    "addressLocality":"北屯區",
+    "addressRegion":"台中市",
+    "addressCountry":"TW"
+  },
+  "telephone":"+886-4-2422-0467",
+  "sameAs":["https://www.instagram.com/marche_patisserie_taichung/"]
+}
+</script>
+<style>
+/* SUNSEE stacked social layout */
+.hero-shell{display:block!important;min-height:0!important}
+.hero-copy{min-height:0!important;padding:54px 46px 42px!important}
+.ig-live{display:block!important;padding:46px 24px 42px!important;border-top:1px solid var(--line);background:linear-gradient(180deg,#f3e7d7,#fbf5ec)!important}
+.ig-live:before{display:none!important}
+.social-live-inner{width:min(100%,760px);margin:auto;text-align:center}
+.social-live-heading{width:min(100%,650px);margin:0 auto 24px}
+.social-live-heading h2,.facebook-post-heading h2,.microglow-like-card h2{font-family:Georgia,"Noto Serif TC",serif;font-size:clamp(26px,4vw,38px);line-height:1.24;margin:7px 0 8px}
+.social-live-heading p,.facebook-post-heading p,.microglow-like-card p{margin:0;color:var(--muted);font-size:12px}
+.ig-frame{width:min(100%,560px)!important;min-height:0!important;margin:auto;display:block!important}
+.social-live-actions{display:flex;justify-content:center;margin-top:18px}
+
+.microglow-like-card{display:grid;justify-items:center;text-align:center;gap:16px;padding:38px 28px;border:1px solid rgba(185,134,73,.22);border-radius:28px;background:radial-gradient(circle at 50% 0,rgba(226,187,132,.24),transparent 38%),rgba(255,253,248,.95);box-shadow:0 18px 52px rgba(77,53,35,.07)}
+.microglow-like-card p{max-width:680px}
+.microglow-like-btn{min-height:54px;padding:0 24px;border:1px solid rgba(185,134,73,.28);border-radius:999px;background:#fffaf3;color:#785633;display:inline-flex;align-items:center;gap:10px;font-weight:900;cursor:pointer}
+.microglow-like-btn.is-liked{color:#fff;background:linear-gradient(135deg,#b98649,#d9ae72);border-color:transparent}
+.microglow-heart{font-size:25px}
+.microglow-like-message{font-size:11px;color:var(--muted)}
+
+.facebook-post-heading{width:min(100%,700px);margin:0 auto 24px;text-align:center}
+.facebook-embed-card{width:min(100%,650px);margin:auto;padding:26px 18px;border:1px solid var(--line);border-radius:26px;background:rgba(255,253,248,.95);box-shadow:0 16px 48px rgba(77,53,35,.06);text-align:center}
+.facebook-post-fallback{margin-top:16px}
+
+@media(max-width:560px){
+ .hero-copy{padding:36px 22px 30px!important}
+ .ig-live{padding:38px 10px 34px!important}
+ .microglow-like-card{padding:30px 18px;border-radius:22px}
+ .microglow-like-btn{width:100%;justify-content:center}
+ .facebook-embed-card{padding:18px 4px;overflow:hidden;border-radius:22px}
+}
+</style><style>
+/* ===== SUNSEE hero info + shared support counter ===== */
+.hero-shell{
+  display:grid!important;
+  grid-template-columns:1.05fr .95fr!important;
+  align-items:stretch!important;
+  min-height:0!important;
+}
+.hero-copy{
+  padding:56px 44px!important;
+  border-right:1px solid var(--line);
+}
+.hero-shop-info{
+  display:flex;
+  align-items:center;
+  padding:42px 38px;
+  background:
+    radial-gradient(circle at 80% 14%,rgba(229,196,149,.20),transparent 34%),
+    #fffaf4;
+}
+.hero-shop-info-inner{
+  width:100%;
+}
+.hero-shop-info h2{
+  margin:7px 0 18px;
+  font-family:Georgia,"Noto Serif TC",serif;
+  font-size:32px;
+}
+.hero-info-list{
+  display:grid;
+  gap:0;
+  border-top:1px solid var(--line);
+}
+.hero-info-row{
+  display:grid;
+  grid-template-columns:86px 1fr;
+  gap:12px;
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+}
+.hero-info-row span{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:900;
+}
+.hero-info-row strong{
+  color:#654f3f;
+  font-size:13px;
+  font-weight:750;
+}
+.hero-info-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:18px;
+}
+.hero-support-counter{
+  margin-top:22px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:15px 17px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#f6e9d7,#fffaf4);
+  border:1px solid rgba(185,134,73,.18);
+}
+.hero-support-heart{
+  width:40px;height:40px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#fff;
+  color:#bd8740;
+  font-size:19px;
+  box-shadow:0 8px 22px rgba(99,69,42,.08);
+}
+.hero-support-counter strong{
+  display:block;
+  font-size:20px;
+  line-height:1.2;
+}
+.hero-support-counter small{
+  color:var(--muted);
+  font-size:11px;
+}
+.shared-like-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:4px;
+}
+.shared-like-number{
+  min-width:160px;
+  padding:14px 18px;
+  border-radius:18px;
+  background:#fffaf3;
+  border:1px solid rgba(185,134,73,.18);
+}
+.shared-like-number strong{
+  display:block;
+  font-size:26px;
+  line-height:1.15;
+}
+.shared-like-number span{
+  color:var(--muted);
+  font-size:11px;
+}
+.microglow-like-btn:disabled{
+  cursor:default;
+}
+@media(max-width:860px){
+  .hero-shell{
+    grid-template-columns:1fr!important;
+  }
+  .hero-copy{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+}
+@media(max-width:560px){
+  .hero-copy{padding:36px 22px 30px!important}
+  .hero-shop-info{padding:30px 22px}
+  .hero-info-row{grid-template-columns:72px 1fr}
+  .hero-info-actions .btn{width:100%}
+  .shared-like-wrap{flex-direction:column}
+  .shared-like-number,.microglow-like-btn{width:100%}
+}
+</style><style>
+/* ===== SUNSEE compact hero support layout ===== */
+.hero-support-counter{
+  display:grid!important;
+  grid-template-columns:auto 1fr auto!important;
+  align-items:center!important;
+  gap:14px!important;
+  padding:16px 17px!important;
+}
+.hero-support-action{
+  display:grid;
+  gap:4px;
+  justify-items:end;
+}
+.compact-like-btn{
+  min-height:42px!important;
+  padding:0 16px!important;
+  font-size:12px!important;
+  white-space:nowrap;
+}
+.hero-support-action .microglow-like-message{
+  min-height:0!important;
+  margin:0!important;
+  max-width:220px;
+  text-align:right;
+  font-size:10px!important;
+}
+@media(max-width:680px){
+  .hero-support-counter{
+    grid-template-columns:auto 1fr!important;
+  }
+  .hero-support-action{
+    grid-column:1/-1;
+    width:100%;
+    justify-items:stretch;
+  }
+  .compact-like-btn{
+    width:100%;
+    justify-content:center;
+  }
+  .hero-support-action .microglow-like-message{
+    max-width:none;
+    text-align:center;
+  }
+}
+</style><style>
+/* ===== SUNSEE support flow + share ===== */
+.hero-shop-info-inner{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.hero-info-top-grid{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:22px;
+  align-items:start;
+}
+.hero-info-primary{
+  min-width:0;
+}
+.hero-info-support-flow{
+  min-width:0;
+  padding:16px;
+  border-radius:18px;
+  background:rgba(255,253,248,.78);
+  border:1px solid rgba(185,134,73,.18);
+}
+.support-flow-title{
+  margin-bottom:10px;
+  color:#6d4f33;
+  font-size:13px;
+  font-weight:900;
+}
+.support-flow-list{
+  display:grid;
+  gap:8px;
+}
+.support-flow-step{
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:9px;
+  align-items:start;
+  padding:8px 0;
+  border-bottom:1px dashed rgba(155,111,65,.16);
+}
+.support-flow-step:last-child{
+  border-bottom:0;
+}
+.support-flow-step>span{
+  width:28px;height:28px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#f3e4cf;
+  color:#aa753d;
+  font-size:9px;
+  font-weight:900;
+}
+.support-flow-step strong{
+  display:block;
+  color:#5f4735;
+  font-size:12px;
+  line-height:1.35;
+}
+.support-flow-step small{
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.45;
+}
+.share-page-btn{
+  width:100%;
+  min-height:42px;
+  margin-top:12px;
+  border:0;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:linear-gradient(135deg,#b98649,#d9ae72);
+  color:#fff;
+  font-weight:900;
+  font-size:12px;
+  cursor:pointer;
+  box-shadow:0 9px 24px rgba(137,92,48,.12);
+}
+.share-page-icon{
+  font-size:15px;
+}
+.share-page-status{
+  min-height:16px;
+  margin-top:5px;
+  color:var(--muted);
+  text-align:center;
+  font-size:9px;
+}
+.hero-support-counter{
+  margin-top:18px!important;
+}
+
+@media(max-width:1050px){
+  .hero-info-top-grid{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:860px){
+  .hero-info-top-grid{
+    grid-template-columns:1.05fr .95fr;
+  }
+}
+@media(max-width:680px){
+  .hero-info-top-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+}
+</style><style>
+/* ===== SUNSEE wide support layout ===== */
+.hero-shop-info{
+  padding:42px 46px!important;
+}
+.hero-info-wide-layout{
+  display:grid;
+  grid-template-columns:minmax(300px,1fr) minmax(80px,.55fr) minmax(260px,.82fr);
+  gap:20px;
+  align-items:start;
+}
+.hero-info-left-slot,
+.hero-info-right-slot{
+  min-width:0;
+}
+.hero-info-spacer{
+  min-height:1px;
+}
+.hero-info-support-flow{
+  margin:0!important;
+  width:100%;
+  align-self:start;
+  padding:18px 18px!important;
+  border-radius:20px!important;
+}
+.hero-support-counter{
+  margin-top:22px!important;
+}
+.hero-info-primary .hero-info-list{
+  width:100%;
+}
+.hero-info-primary .hero-info-actions{
+  margin-top:18px;
+}
+@media(max-width:1180px){
+  .hero-info-wide-layout{
+    grid-template-columns:1fr 40px .9fr;
+  }
+}
+@media(max-width:960px){
+  .hero-info-wide-layout{
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .hero-info-spacer{
+    display:none;
+  }
+}
+@media(max-width:680px){
+  .hero-shop-info{
+    padding:30px 22px!important;
+  }
+  .hero-info-wide-layout{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .hero-info-right-slot{
+    margin-top:2px;
+  }
+}
+</style><style>
+/* ===== SUNSEE partner information notice ===== */
+.partner-notice-section{
+  padding:10px 0 24px;
+}
+.partner-notice{
+  padding:16px 18px;
+  border-radius:16px;
+  border:1px solid rgba(155,111,65,.15);
+  background:rgba(255,253,248,.78);
+}
+.partner-notice strong{
+  display:block;
+  margin-bottom:4px;
+  color:#7b5b3c;
+  font-size:11px;
+  letter-spacing:.08em;
+}
+.partner-notice p{
+  margin:0;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.75;
+}
+</style></head>
+<body>
+<header class="topbar">
+<div class="container nav">
+<a class="brand" href="https://sunsee.tw/">
+<span class="brandmark">☼</span>
+<span>SUNSEE <small>善・行｜微光公益計畫</small></span>
+</a>
+<div class="navlinks">
+<a class="btn" href="https://sunsee.tw/">回 SUNSEE</a>
+<a class="btn primary" href="https://www.instagram.com/marche_patisserie_taichung/" rel="noopener" target="_blank">看店家 IG</a>
+</div>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="container">
+<div class="hero-shell">
+<div class="hero-copy">
+<div class="eyebrow">SUNSEE MICROGLOW SHOP</div>
+<h1>Marché<br/>Pâtisserie</h1>
+<p class="hero-lead">
+          市集・甜點＆咖啡｜台中市北屯區<br/>
+          讓一份日常消費，也能成為支持善意的一種方式。
+        </p>
+<div class="tags">
+<span class="tag">法式甜點</span>
+<span class="tag">咖啡</span>
+<span class="tag">SUNSEE 微光合作店家</span>
+</div>
+<div class="hero-actions">
+<a class="btn primary" href="https://www.instagram.com/marche_patisserie_taichung/" rel="noopener" target="_blank">看店家 IG</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%8C%97%E5%B1%AF%E5%8D%80%E5%B1%B1%E8%A5%BF%E8%B7%AF%E4%B8%89%E6%AE%B599%E8%99%9F3F" rel="noopener" target="_blank">導航到店家</a>
+</div>
+
+</div>
+<div class="ig-live">
+<div class="social-live-inner">
+<div class="social-live-heading">
+<div class="eyebrow">LATEST FROM INSTAGRAM</div>
+<h2>從店家 Instagram 看見最新甜點與日常</h2>
+<p>更多新品、活動與營業資訊，請以店家官方 Instagram 公告為準。</p>
+</div>
+<div class="ig-frame">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/marche_patisserie_taichung/" data-instgrm-version="14" style="background:#fff;border:0;border-radius:16px;margin:0 auto;max-width:540px;min-width:0;padding:0;width:100%;">
+</blockquote>
+</div>
+<div class="social-live-actions">
+<a class="btn primary" href="https://www.instagram.com/marche_patisserie_taichung/" rel="noopener" target="_blank">看更多店家最新照片</a>
+</div>
+</div>
+</div>
+<aside class="hero-shop-info">
+<div class="hero-shop-info-inner"><div class="eyebrow">SHOP INFORMATION</div><h2>店家資訊</h2><div class="hero-info-wide-layout">
+<div class="hero-info-left-slot"><div class="hero-info-primary"><div class="hero-info-list">
+<div class="hero-info-row"><span>店家</span><strong>Marché Pâtisserie</strong></div>
+<div class="hero-info-row"><span>地址</span><strong>台中市北屯區山西路三段99號3F</strong></div>
+<div class="hero-info-row"><span>電話</span><strong>04-2422-0467</strong></div>
+<div class="hero-info-row"><span>Instagram</span><strong>@marche_patisserie_taichung</strong></div>
+</div><div class="hero-info-actions">
+<a class="btn primary" href="https://www.instagram.com/marche_patisserie_taichung/" rel="noopener" target="_blank">看店家 IG</a>
+<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%8C%97%E5%B1%AF%E5%8D%80%E5%B1%B1%E8%A5%BF%E8%B7%AF%E4%B8%89%E6%AE%B599%E8%99%9F3F" rel="noopener" target="_blank">導航到店家</a>
+</div></div></div>
+<div aria-hidden="true" class="hero-info-spacer"></div>
+<div class="hero-info-right-slot"><div class="hero-info-support-flow">
+<div class="support-flow-title">支持這束微光</div>
+<div class="support-flow-list">
+<div class="support-flow-step">
+<span>01</span>
+<div><strong>到店支持</strong><small>選擇微光合作店家消費</small></div>
+</div>
+<div class="support-flow-step">
+<span>02</span>
+<div><strong>詢問微光方式</strong><small>以店家當期公告為準</small></div>
+</div>
+<div class="support-flow-step">
+<span>03</span>
+<div><strong>分享給朋友</strong><small>讓更多人看見這間店</small></div>
+</div>
+</div>
+<button class="share-page-btn" id="sharePageBtn" type="button">
+<span class="share-page-icon">↗</span>
+<span>分享這間微光店家</span>
+</button>
+<div aria-live="polite" class="share-page-status" id="sharePageStatus"></div>
+</div></div>
+</div><div class="hero-support-counter">
+<span class="hero-support-heart">♥</span>
+<div>
+<strong><span id="sharedSupportCount">0</span> 人</strong>
+<small>正在支持這束微光</small>
+</div>
+<div class="hero-support-action">
+<button aria-pressed="false" class="microglow-like-btn compact-like-btn" id="microglowLikeBtn" type="button">
+<span class="microglow-heart">♡</span>
+<span class="microglow-like-label">我也支持這束微光</span>
+</button>
+<div aria-live="polite" class="microglow-like-message" id="microglowLikeMessage"></div>
+</div></div></div>
+</aside></div>
+</div>
+</section>
+<section class="section" id="facebookPostSection">
+<div class="container">
+<div class="facebook-post-heading">
+<div class="eyebrow">LATEST FROM FACEBOOK</div>
+<h2>來自店家 Facebook 的近期分享</h2>
+<p>從店家官方 Facebook 看見近期活動、甜點與空間日常。</p>
+</div>
+<div class="facebook-embed-card">
+<div id="fb-root"></div>
+<div class="fb-post" data-href="https://www.facebook.com/61587001660211/posts/122133337467233388/" data-show-text="true" data-width="500"></div>
+<div class="facebook-post-fallback">
+<a class="btn primary" href="https://www.facebook.com/61587001660211/posts/122133337467233388/" rel="noopener" target="_blank">前往店家 Facebook</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<section class="partner-notice-section" id="sunseePartnerNotice">
+<div class="container">
+<div class="partner-notice">
+<strong>資訊說明</strong>
+<p>本頁所使用之店家名稱、基本資訊與官方社群連結，皆經合作店家同意後於 SUNSEE 平台刊載。店家最新營業資訊、活動內容、商品與服務方式，仍以店家官方公告及現場說明為準。SUNSEE 主要提供平台展示、串聯與資訊導流，不代收店家款項，亦不代替店家作成交易、服務或公益內容之承諾。</p>
+</div>
+</div>
+</section><footer>
+<div class="container">
+<strong>善意不一定很大，但願意開始，就能成為一束光。</strong>
+<small>© 2026 SUNSEE 善・行｜微光公益計畫｜讓善意被看見，讓微光持續發生。</small>
+</div>
+</footer>
+<!-- Instagram official embed loader -->
+<script async="" src="https://www.instagram.com/embed.js"></script>
+<script async="" crossorigin="anonymous" defer="" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&amp;version=v25.0"></script><script>
+/* SUNSEE_SHARED_MICROGLOW_COUNTER */
+(function(){
+  const SUPABASE_URL='https://uszidbjavvxymgferssw.supabase.co';
+  const SUPABASE_KEY='sb_publishable_CX2vRUSqJRXnV9qY1mVxVg_eV-vNDvW';
+  const SHOP_SLUG='marche_patisserie_taichung';
+  const DEVICE_KEY='sunsee_supported_'+SHOP_SLUG;
+
+  const countSmall=document.getElementById('sharedSupportCount');
+  const countLarge=document.getElementById('sharedSupportCountLarge');
+  const btn=document.getElementById('microglowLikeBtn');
+  const msg=document.getElementById('microglowLikeMessage');
+
+  function setCount(n){
+    const value=Number.isFinite(Number(n))?Number(n):0;
+    if(countSmall) countSmall.textContent=value;
+    if(countLarge) countLarge.textContent=value;
+  }
+
+  function paintSupported(supported){
+    if(!btn) return;
+    btn.classList.toggle('is-liked',supported);
+    btn.setAttribute('aria-pressed',supported?'true':'false');
+    const heart=btn.querySelector('.microglow-heart');
+    const label=btn.querySelector('.microglow-like-label');
+    if(heart) heart.textContent=supported?'♥':'♡';
+    if(label) label.textContent=supported?'已支持這束微光':'我也支持這束微光';
+    if(supported) btn.disabled=true;
+  }
+
+  async function loadCount(){
+    try{
+      const res=await fetch(
+        `${SUPABASE_URL}/rest/v1/microglow_support?shop_slug=eq.${encodeURIComponent(SHOP_SLUG)}&select=support_count`,
+        {
+          headers:{
+            'apikey':SUPABASE_KEY,
+            'Authorization':'Bearer '+SUPABASE_KEY,
+            'Accept':'application/json'
+          }
+        }
+      );
+      if(!res.ok) throw new Error('load_failed');
+      const data=await res.json();
+      const count=(data && data[0] && data[0].support_count)!=null ? data[0].support_count : 0;
+      setCount(count);
+    }catch(_){
+      if(msg) msg.textContent='目前無法讀取支持數字，稍後重新整理即可再試。';
+    }
+  }
+
+  async function addSupport(){
+    if(!btn) return;
+
+    let already=false;
+    try{ already=localStorage.getItem(DEVICE_KEY)==='1'; }catch(_){
+      already=false;
+    }
+
+    if(already){
+      paintSupported(true);
+      if(msg) msg.textContent='你已經支持過這束微光，謝謝你。';
+      return;
+    }
+
+    btn.disabled=true;
+    if(msg) msg.textContent='正在送出你的支持…';
+
+    try{
+      const res=await fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_microglow_support`,{
+        method:'POST',
+        headers:{
+          'apikey':SUPABASE_KEY,
+          'Authorization':'Bearer '+SUPABASE_KEY,
+          'Content-Type':'application/json',
+          'Accept':'application/json'
+        },
+        body:JSON.stringify({p_shop_slug:SHOP_SLUG})
+      });
+
+      if(!res.ok) throw new Error('increment_failed');
+
+      const newCount=await res.json();
+      setCount(newCount);
+
+      try{ localStorage.setItem(DEVICE_KEY,'1'); }catch(_){
+        // Ignore storage failure; database count has already succeeded.
+      }
+
+      paintSupported(true);
+      if(msg) msg.textContent='謝謝你。這一點支持，會讓善意更容易被看見。';
+    }catch(_){
+      btn.disabled=false;
+      if(msg) msg.textContent='目前送出失敗，請稍後再試。';
+    }
+  }
+
+  let supported=false;
+  try{ supported=localStorage.getItem(DEVICE_KEY)==='1'; }catch(_){
+    supported=false;
+  }
+  paintSupported(supported);
+  loadCount();
+
+  if(btn && !supported){
+    btn.addEventListener('click',addSupport);
+  }
+})();
+</script><script>
+/* SUNSEE_SHARE_PAGE */
+(function(){
+  const btn=document.getElementById('sharePageBtn');
+  const status=document.getElementById('sharePageStatus');
+  if(!btn) return;
+
+  btn.addEventListener('click',async()=>{
+    const shareData={
+      title:'Marché Pâtisserie｜SUNSEE 微光合作店家',
+      text:'一起看見這間願意參與微光行動的店家。',
+      url:window.location.href
+    };
+
+    try{
+      if(navigator.share){
+        await navigator.share(shareData);
+        if(status) status.textContent='已開啟分享選單';
+      }else if(navigator.clipboard){
+        await navigator.clipboard.writeText(window.location.href);
+        if(status) status.textContent='已複製頁面連結';
+      }else{
+        const ta=document.createElement('textarea');
+        ta.value=window.location.href;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        if(status) status.textContent='已複製頁面連結';
+      }
+    }catch(err){
+      if(err && err.name==='AbortError') return;
+      if(status) status.textContent='目前無法分享，請直接複製網址';
+    }
+
+    setTimeout(()=>{
+      if(status) status.textContent='';
+    },2600);
+  });
+})();
+</script></body>
+</html>
