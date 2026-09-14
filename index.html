@@ -2042,6 +2042,22 @@ body:before{
 .shop-mini-btn.no-link{color:#7b6959;background:#f8f0e6;border-color:rgba(116,83,50,.12)}
 @media(max-width:560px){.sunsee-cooperation-notice-card{padding:21px 18px;border-radius:18px}.sunsee-cooperation-notice-card h3{font-size:20px}}
 </style>
+
+<style>
+.shop-card-static{display:block;height:100%}
+.shop-ig-cover{position:relative;height:190px;overflow:hidden;background:#f4eadf}
+.shop-ig-embed-stage{position:absolute;left:50%;top:0;width:540px;height:560px;pointer-events:none;transform:translateX(-50%) translateY(-145px) scale(.67);transform-origin:top center}
+.shop-ig-embed-stage .instagram-media{width:540px!important;min-width:540px!important;max-width:540px!important;margin:0!important}
+.shop-ig-cover:after,.shop-photo-pending:after{content:"";position:absolute;inset:auto 0 0;height:38%;background:linear-gradient(180deg,transparent,rgba(40,26,15,.48));pointer-events:none}
+.ig-real-photo-label{position:absolute;right:12px;top:12px;z-index:4;padding:5px 9px;border-radius:999px;background:rgba(255,252,246,.93);color:#895f31;font-size:10px;font-weight:850}
+.shop-photo-pending{position:relative;height:190px;display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,#f2e7da,#fbf7f1)}
+.shop-photo-pending-inner{display:grid;gap:3px;justify-items:center;color:#8a6744}
+.shop-photo-pending-inner>span{font-size:22px;color:#c5914a}.shop-photo-pending-inner strong{font-size:13px}.shop-photo-pending-inner small{font-size:10px;color:#9a8777}
+.shop-mini-btn.detail-direct{border-color:#c5914a;background:linear-gradient(135deg,#c18b43,#dcae69);color:#fff}
+.all-shop-actions{align-items:center}
+@media(max-width:640px){.shop-ig-embed-stage{transform:translateX(-50%) translateY(-145px) scale(.72)}.all-shop-actions .shop-mini-btn{width:100%}}
+</style>
+
 </head>
 <body><div aria-label="SUNSEE 微光合作店家公告" class="sunsee-top-notice" role="note">
 <div class="sunsee-top-notice-inner">
@@ -2484,7 +2500,9 @@ const SHOP_DATA=[
    igHandle:'@mahottjp',
    photoLink:'https://www.instagram.com/p/Db3Rs3NIHbr/',
    img:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80',
-   detailPage:'https://sunsee.tw/shops/maho/index.html'
+   detailPage:'https://sunsee.tw/shops/maho/index.html',
+   embedInstagram:true,
+   embedUrl:'https://www.instagram.com/p/Db3Rs3NIHbr/'
  },
  {
    city:'台中市',
@@ -2514,7 +2532,9 @@ const SHOP_DATA=[
    igHandle:'@br39.ed',
    photoLink:'https://www.instagram.com/p/DYlnfMLpRDd/',
    img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=1200&q=80',
-   detailPage:'https://sunsee.tw/shops/pindouhua/index.html'
+   detailPage:'https://sunsee.tw/shops/pindouhua/index.html',
+   embedInstagram:true,
+   embedUrl:'https://www.instagram.com/p/DYlnfMLpRDd/'
  },
  {
    city:'桃園市',
@@ -2528,7 +2548,9 @@ const SHOP_DATA=[
    igHandle:'@slowcafe2026',
    photoLink:'https://www.instagram.com/p/DXta9UsD4vb/',
    img:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=80',
-   detailPage:'https://sunsee.tw/shops/slowcafe/index.html'
+   detailPage:'https://sunsee.tw/shops/slowcafe/index.html',
+   embedInstagram:true,
+   embedUrl:'https://www.instagram.com/p/DXta9UsD4vb/'
  },
  {
    city:'宜蘭縣',
@@ -2542,7 +2564,9 @@ const SHOP_DATA=[
    igHandle:'@b_0511014',
    photoLink:'https://www.instagram.com/p/DY14ds2gKc9/',
    img:'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80',
-   detailPage:'https://sunsee.tw/shops/niangniang/index.html'
+   detailPage:'https://sunsee.tw/shops/niangniang/index.html',
+   embedInstagram:true,
+   embedUrl:'https://www.instagram.com/p/DY14ds2gKc9/'
  },
  {
    city:'基隆市',
@@ -2556,7 +2580,9 @@ const SHOP_DATA=[
    igHandle:'@ibogoodmorning',
    photoLink:'https://www.instagram.com/ibogoodmorning/',
    img:'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1200&q=80',
-   detailPage:'https://sunsee.tw/shops/ibogoodmorning/index.html'
+   detailPage:'https://sunsee.tw/shops/ibogoodmorning/index.html',
+   embedInstagram:true,
+   embedUrl:'https://www.instagram.com/ibogoodmorning/'
  },
  {
    city:'台北市',
@@ -2570,7 +2596,8 @@ const SHOP_DATA=[
    igHandle:'',
    photoLink:'',
    img:'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=80',
-   detailPage:'https://sunsee.tw/shops/toast-neihu/index.html'
+   detailPage:'https://sunsee.tw/shops/toast-neihu/index.html',
+   embedInstagram:false
  },
  {
    city:'台中市',
@@ -2584,7 +2611,8 @@ const SHOP_DATA=[
    igHandle:'',
    photoLink:'',
    img:'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80',
-   detailPage:'https://sunsee.tw/shops/suoyi-taichung/index.html'
+   detailPage:'https://sunsee.tw/shops/suoyi-taichung/index.html',
+   embedInstagram:false
  }
 ];
 const grid=document.getElementById('shopGrid'),
@@ -2655,115 +2683,51 @@ async function geocodeShop(shop){
 function render(city=activeCity){
   activeCity=city;
   let rows=city==='全部'?SHOP_DATA.slice():SHOP_DATA.filter(x=>x.city===city);
-
   if(nearbyMode && userPosition){
     rows.forEach(s=>{
-      if(Number.isFinite(s.lat) && Number.isFinite(s.lng)){
-        s.distance=haversineKm(userPosition.lat,userPosition.lng,s.lat,s.lng);
-      }else{
-        s.distance=null;
-      }
+      if(Number.isFinite(s.lat)&&Number.isFinite(s.lng)) s.distance=haversineKm(userPosition.lat,userPosition.lng,s.lat,s.lng);
+      else s.distance=null;
     });
-    rows.sort((a,b)=>{
-      if(a.distance==null && b.distance==null) return 0;
-      if(a.distance==null) return 1;
-      if(b.distance==null) return -1;
-      return a.distance-b.distance;
-    });
+    rows.sort((a,b)=>a.distance==null?1:b.distance==null?-1:a.distance-b.distance);
   }
 
   grid.innerHTML=rows.map(s=>{
-    const distanceBadge=nearbyMode && s.distance!=null
-      ? `距離 ${formatDistance(s.distance)}`
-      : '微光合作店家';
-
-    if(s.embedInstagram){
-      return `
-      <article class="shop-card marche-shop-card ${nearbyMode?'nearby-result':''}">
+    const distanceBadge=nearbyMode&&s.distance!=null?`距離 ${formatDistance(s.distance)}`:'微光合作店家';
+    const cover=s.embedInstagram&&s.embedUrl?`
+      <div class="shop-visual shop-ig-cover">
+        <div class="shop-ig-embed-stage">
+          <blockquote class="instagram-media" data-instgrm-permalink="${s.embedUrl}" data-instgrm-version="14" style="background:#fff;border:0;margin:0;max-width:540px;min-width:540px;padding:0;width:540px;"></blockquote>
+        </div>
+        <span class="demo-label">${distanceBadge}</span>
+        <span class="shop-photo-city">${s.city}・SUNSEE</span>
+        <span class="ig-real-photo-label">店家官方 IG</span>
+      </div>`:`
+      <div class="shop-visual shop-photo-pending">
+        <div class="shop-photo-pending-inner"><span>✦</span><strong>店家官方照片待補</strong><small>待確認官方 Instagram 後更新</small></div>
+        <span class="demo-label">${distanceBadge}</span>
+        <span class="shop-photo-city">${s.city}・SUNSEE</span>
+      </div>`;
+    return `
+      <article class="shop-card ${nearbyMode?'nearby-result':''}">
         <div class="shop-card-static">
-
-          <div class="shop-visual shop-ig-cover" aria-label="${s.name} 官方 Instagram 食品貼文">
-            <div class="shop-ig-embed-stage">
-              <blockquote
-                class="instagram-media"
-                data-instgrm-permalink="${s.embedUrl}"
-                data-instgrm-version="14"
-                style="background:#fff;border:0;margin:0;max-width:540px;min-width:540px;padding:0;width:540px;">
-              </blockquote>
-            </div>
-            <span class="demo-label">${distanceBadge}</span>
-            <span class="shop-photo-city">${s.city}・SUNSEE</span>
-            <span class="ig-real-photo-label">店家官方 IG 實際貼文</span>
-          </div>
-
+          ${cover}
           <div class="shop-body">
-            <div class="shop-heading-row">
-              <span class="shop-city">${s.city}</span>
-              ${nearbyMode && s.distance!=null ? `<span class="distance-pill">⌖ ${formatDistance(s.distance)}</span>` : ''}
-            </div>
-
+            <div class="shop-heading-row"><span class="shop-city">${s.city}</span>${nearbyMode&&s.distance!=null?`<span class="distance-pill">⌖ ${formatDistance(s.distance)}</span>`:''}</div>
             <h3>${s.name}</h3>
             <p><strong>${s.type}</strong><br>${s.desc}</p>
-
-            <div class="shop-contact">
-              <span>⌖ ${s.address}</span>
-              <span>☎ ${s.contact}</span>
-            </div>
-
+            <div class="shop-contact"><span>⌖ ${s.address}</span><span>☎ ${s.contact}</span></div>
             <div class="status">✦ ${s.status}</div>
-
-            <div class="shop-actions marche-shop-actions">
-              <a class="shop-mini-btn detail-direct" href="${s.detailPage}" aria-label="查看 ${s.name} 微光店家專屬頁">
-                ✦ 查看微光頁
-              </a>
-              <a class="shop-mini-btn ig-direct" href="${s.ig}" target="_blank" rel="noopener" aria-label="前往 ${s.name} 官方 Instagram">
-                ◎ 官方 IG｜${s.igHandle} →
-              </a>
+            <div class="shop-actions all-shop-actions">
+              <a class="shop-mini-btn detail-direct" href="${s.detailPage}">✦ 查看微光頁</a>
+              ${s.ig?`<a class="shop-mini-btn ig-direct" href="${s.ig}" target="_blank" rel="noopener">◎ 官方 IG｜${s.igHandle} →</a>`:''}
             </div>
           </div>
-
         </div>
       </article>`;
-    }
-
-    const cardContent=`
-        <div class="shop-visual">
-          <img src="${s.img}" alt="${s.name} 類型情境照片" loading="lazy">
-          <span class="demo-label">${distanceBadge}</span>
-          <span class="shop-photo-city">${s.city}・SUNSEE</span>
-        </div>
-        <div class="shop-body">
-          <div class="shop-heading-row">
-            <span class="shop-city">${s.city}</span>
-            ${nearbyMode && s.distance!=null ? `<span class="distance-pill">⌖ ${formatDistance(s.distance)}</span>` : ''}
-          </div>
-          <h3>${s.name}</h3>
-          <p><strong>${s.type}</strong><br>${s.desc}</p>
-          <div class="shop-contact">
-            <span>⌖ ${s.address}</span>
-            <span>☎ ${s.contact}</span>
-          </div>
-          <div class="status">✦ ${s.status}</div>
-          <div class="shop-actions">
-            ${s.ig ? `<span class="shop-mini-btn ig-direct">◎ 官方 IG｜${s.igHandle} →</span>` : `<span class="shop-mini-btn no-link">合作資訊請以店家公告為準</span>`}
-          </div>
-        </div>`;
-
-    return `
-    <article class="shop-card ${nearbyMode?'nearby-result':''}">
-      ${s.ig ? `<a class="shop-card-link" href="${s.ig}" target="_blank" rel="noopener" aria-label="前往 ${s.name} 官方 Instagram">${cardContent}</a>` : `<div class="shop-card-link">${cardContent}</div>`}
-    </article>`;
   }).join('');
-
   grid.style.display=rows.length?'grid':'none';
   empty.style.display=rows.length?'none':'block';
-
-  /* 店家篩選或附近排序後，重新處理 Instagram 官方嵌入內容。 */
-  window.setTimeout(()=>{
-    if(window.instgrm && window.instgrm.Embeds){
-      window.instgrm.Embeds.process();
-    }
-  },80);
+  setTimeout(()=>{if(window.instgrm&&window.instgrm.Embeds)window.instgrm.Embeds.process();},100);
 }
 
 render();
