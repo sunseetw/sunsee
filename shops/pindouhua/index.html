@@ -22,6 +22,34 @@ header{position:sticky;top:0;z-index:30;background:rgba(251,247,241,.94);backdro
 .notice{padding:14px 0 36px}.notice-card{padding:18px 20px;border-radius:18px;border:1px solid rgba(155,111,65,.14);background:rgba(255,253,248,.78)}.notice-card strong{display:block;font-size:11px;letter-spacing:.08em;margin-bottom:5px}.notice-card p{margin:0;color:var(--muted);font-size:10px;line-height:1.8}footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:11px;text-align:center}
 @media(max-width:900px){.hero-card{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr 1fr}}@media(max-width:680px){.container{width:min(calc(100% - 22px),var(--max))}.hero-main{padding:36px 22px}.hero-side{padding:28px 22px}.hero-main h1{font-size:42px}.info-grid{grid-template-columns:1fr}.support-strip{grid-template-columns:auto 1fr}.support-strip .like-btn{grid-column:1/-1;width:100%}.social-simple{display:block}.social-simple .btn{margin-top:18px;width:100%}}
 </style>
+
+<style>
+.pindouhua-reel-section{padding-top:34px}
+.pindouhua-reel-card{
+  margin-top:20px;padding:0;overflow:hidden;border-radius:24px;
+  border:1px solid var(--line);background:#fff;box-shadow:0 16px 45px rgba(73,48,30,.055)
+}
+.pindouhua-reel-card .instagram-media{
+  display:block!important;margin:0 auto!important;width:100%!important;max-width:540px!important;min-width:326px!important
+}
+.order-btn{background:#fff8ef;color:#6f5238;border-color:rgba(197,145,74,.28)}
+.order-panel{
+  display:flex;align-items:center;justify-content:space-between;gap:26px;padding:26px;
+  border-radius:24px;border:1px solid var(--line);
+  background:radial-gradient(circle at 90% 10%,rgba(229,196,142,.16),transparent 28%),rgba(255,253,249,.92)
+}
+.order-panel h2{margin:6px 0 8px;font-size:30px}
+.order-panel p{margin:0;color:var(--muted);max-width:620px}
+.order-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;min-width:220px}
+.pindouhua-social-panel{align-items:flex-start}
+.pindouhua-social-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:680px){
+  .order-panel{display:block}.order-links{margin-top:18px;min-width:0}
+  .order-links .btn,.order-btn,.pindouhua-social-links .btn{width:100%}
+  .pindouhua-social-links{width:100%;margin-top:18px}
+}
+</style>
+
 </head>
 <body>
 <header><div class="container nav"><a class="brand" href="https://sunsee.tw/"><span class="brand-mark">☼</span><span>SUNSEE<small>善・行｜微光公益計畫</small></span></a><div class="nav-actions"><a class="btn" href="https://sunsee.tw/">回 SUNSEE</a><a class="btn primary" href="https://www.instagram.com/br39.ed/" target="_blank" rel="noopener">看店家 IG</a></div></div></header>
@@ -30,14 +58,64 @@ header{position:sticky;top:0;z-index:30;background:rgba(251,247,241,.94);backdro
 <div class="hero-main"><div class="eyebrow">SUNSEE MICROGLOW SHOP</div><h1 class="serif">品豆花</h1><div class="meta">豆花・甜品｜新北市</div><p class="lead">一碗簡單的豆花，也可以是一份很實在的溫柔。待用餐、愛心份量或其他支持方式由店家自行決定。</p><div class="tags"><span>豆花</span><span>新北市</span><span>SUNSEE 微光合作店家</span></div></div>
 <aside class="hero-side">
 <div class="info-grid">
-<div class="info-panel"><div class="eyebrow">SHOP INFORMATION</div><h2 class="serif">店家資訊</h2><div class="info-list"><div class="info-row"><span>店家</span><strong>品豆花</strong></div><div class="info-row"><span>地址</span><strong>新北市中和區和平街89號（和平街黃昏市場107攤位）</strong></div><div class="info-row"><span>聯絡</span><strong>LINE：@543nymgh</strong></div><div class="info-row"><span>類型</span><strong>豆花・甜品</strong></div></div><div class="action-row"><a class="btn primary" href="https://www.instagram.com/br39.ed/" target="_blank" rel="noopener">看店家 IG</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%92%8C%E5%8D%80%E5%92%8C%E5%B9%B3%E8%A1%9789%E8%99%9F%EF%BC%88%E5%92%8C%E5%B9%B3%E8%A1%97%E9%BB%83%E6%98%8F%E5%B8%82%E5%A0%B4107%E6%94%A4%E4%BD%8D%EF%BC%89" target="_blank" rel="noopener">導航到店家</a></div></div>
+<div class="info-panel"><div class="eyebrow">SHOP INFORMATION</div><h2 class="serif">店家資訊</h2><div class="info-list"><div class="info-row"><span>店家</span><strong>品豆花</strong></div><div class="info-row"><span>地址</span><strong>新北市中和區和平街89號（和平街黃昏市場107攤位）</strong></div><div class="info-row"><span>聯絡</span><strong>LINE：@543nymgh</strong></div><div class="info-row"><span>類型</span><strong>豆花・甜品</strong></div></div><div class="action-row"><a class="btn primary" href="https://www.instagram.com/br39.ed/" target="_blank" rel="noopener">看店家 IG</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%96%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%92%8C%E5%8D%80%E5%92%8C%E5%B9%B3%E8%A1%9789%E8%99%9F%EF%BC%88%E5%92%8C%E5%B9%B3%E8%A1%97%E9%BB%83%E6%98%8F%E5%B8%82%E5%A0%B4107%E6%94%A4%E4%BD%8D%EF%BC%89" target="_blank" rel="noopener">導航到店家</a><a class="btn order-btn" href="https://www.ubereats.com/tw/store/%E5%93%81%E8%B1%86%E8%8A%B1/svD5CrC4VQqIhr3JFOmjIw" target="_blank" rel="noopener">Uber Eats｜查看菜單・訂購</a></div></div>
 <div class="flow-panel"><div class="eyebrow">HOW TO SUPPORT</div><h2 class="serif">支持這束微光</h2><div class="step"><b>01</b><div><strong>找到微光店家</strong><small>到店或依店家提供方式聯繫</small></div></div><div class="step"><b>02</b><div><strong>詢問當期合作方式</strong><small>內容、份量與方式由店家決定</small></div></div><div class="step"><b>03</b><div><strong>直接向店家支持</strong><small>SUNSEE 不代收店家款項</small></div></div><button class="btn primary share" id="sharePageBtn" type="button">↗ 分享這間微光店家</button></div>
 </div>
 <div class="support-strip"><span class="support-heart">♥</span><div class="support-copy"><strong><span id="sharedSupportCount">0</span> 人</strong><small>正在支持這束微光</small></div><button class="btn like-btn" id="microglowLikeBtn" type="button"><span class="microglow-heart">♡</span><span class="like-label">我也支持這束微光</span></button><div class="like-msg" id="microglowLikeMessage"></div></div>
 </aside>
 </div></div></section>
 <section class="section"><div class="container narrow"><div class="section-title"><div class="eyebrow">ABOUT THIS MICROGLOW SHOP</div><h2 class="serif">一間店，也可以成為城市裡的一點微光。</h2></div><div class="about-card"><p><strong>品豆花</strong> 是 SUNSEE 收錄的微光合作店家。這個頁面整理店家基本資訊與微光合作方式，讓民眾可以更容易找到店家、了解目前的支持方式。</p><p>SUNSEE 不代收店家款項，也不替店家決定公益內容、份量或金額；實際合作方式皆以店家最新公告與現場說明為準。</p><div class="status-box">✦ 待用餐／愛心份量請直接與店家聯繫確認</div></div></div></section>
+
+<section class="section pindouhua-reel-section" id="pindouhuaReel">
+  <div class="container narrow">
+    <div class="section-title center">
+      <div class="eyebrow">FEATURED REEL</div>
+      <h2 class="serif">品豆花｜實際探店影片</h2>
+    </div>
+    <div class="pindouhua-reel-card">
+      <blockquote class="instagram-media"
+        data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/reel/DdSyf9GiAqr/"
+        data-instgrm-version="14"
+        style="background:#fff;border:0;border-radius:14px;margin:0 auto;max-width:540px;min-width:326px;padding:0;width:100%;">
+      </blockquote>
+    </div>
+  </div>
+</section>
+
 <section class="section"><div class="container narrow"><div class="section-title center"><div class="eyebrow">LATEST FROM INSTAGRAM</div><h2 class="serif">從店家 Instagram 看見近期分享</h2><p>更多新品、活動與營業資訊，請以店家官方 Instagram 公告為準。</p></div><div class="embed-card"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DYlnfMLpRDd/" data-instgrm-version="14" style="background:#fff;border:0;margin:0 auto;max-width:540px;min-width:0;padding:0;width:100%;"></blockquote><a class="btn primary social-button" href="https://www.instagram.com/br39.ed/" target="_blank" rel="noopener">前往店家 Instagram</a></div></div></section>
+
+<section class="section" id="pindouhuaOrderSection">
+  <div class="container narrow">
+    <div class="order-panel">
+      <div>
+        <div class="eyebrow">MENU &amp; ORDER</div>
+        <h2 class="serif">查看最新菜單・線上訂購</h2>
+        <p>餐點內容、價格與供應狀況以 Uber Eats 與店家最新公告為準。SUNSEE 不代收款項，訂單與付款由外送平台／店家直接處理。</p>
+      </div>
+      <div class="order-links">
+        <a class="btn primary" href="https://www.ubereats.com/tw/store/%E5%93%81%E8%B1%86%E8%8A%B1/svD5CrC4VQqIhr3JFOmjIw" target="_blank" rel="noopener">Uber Eats｜立即訂購</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container narrow">
+    <div class="social-simple pindouhua-social-panel">
+      <div>
+        <div class="eyebrow">OFFICIAL SOCIAL</div>
+        <h2 class="serif">追蹤品豆花最新消息</h2>
+        <p>店家近期餐點、營業與合作資訊，可由官方 Instagram 查看。</p>
+      </div>
+      <div class="pindouhua-social-links">
+        <a class="btn primary" href="https://www.instagram.com/br39.ed/" target="_blank" rel="noopener">Instagram｜@br39.ed</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="notice"><div class="container narrow"><div class="notice-card"><strong>資訊說明</strong><p>本頁所使用之店家名稱、基本資訊與官方社群連結，皆經合作店家同意後於 SUNSEE 平台刊載。店家最新營業資訊、活動內容、商品與服務方式，仍以店家官方公告及現場說明為準。SUNSEE 主要提供平台展示、串聯與資訊導流，不代收店家款項，亦不代替店家作成交易、服務或公益內容之承諾。</p></div></div></section>
 </main>
 <footer>© 2026 SUNSEE 善・行｜微光公益計畫。讓善意被看見，讓微光持續發生。</footer>
@@ -53,4 +131,5 @@ header{position:sticky;top:0;z-index:30;background:rgba(251,247,241,.94);backdro
 (function(){const b=document.getElementById('sharePageBtn');if(!b)return;b.addEventListener('click',async()=>{const d={title:'品豆花｜SUNSEE 微光合作店家',text:'一起看見這間微光店家。',url:window.location.href};try{if(navigator.share)await navigator.share(d);else if(navigator.clipboard){await navigator.clipboard.writeText(window.location.href);b.textContent='✓ 已複製連結';setTimeout(()=>b.textContent='↗ 分享這間微光店家',1800);}}catch(e){}});})();
 </script>
 <script async src='https://www.instagram.com/embed.js'></script>
+<script async src="https://www.instagram.com/embed.js"></script>
 </body></html>
