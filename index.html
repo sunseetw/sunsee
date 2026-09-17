@@ -2058,6 +2058,41 @@ body:before{
 @media(max-width:640px){.shop-ig-embed-stage{transform:translateX(-50%) translateY(-145px) scale(.72)}.all-shop-actions .shop-mini-btn{width:100%}}
 </style>
 
+
+<style>
+.shop-mini-btn.social-direct{
+  background:#fffaf4;
+  color:#6f5238;
+  border-color:rgba(116,83,50,.16);
+}
+.shop-mini-btn.social-direct:hover{
+  background:#f5eadb;
+  transform:translateY(-1px);
+}
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X5X213H07P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X5X213H07P');
+</script>
+
+
+<style>
+.shop-mini-btn.order-direct{
+  background:#fff7ec;
+  color:#7a542b;
+  border-color:rgba(197,145,74,.28);
+}
+.shop-mini-btn.order-direct:hover{
+  background:#f5e8d6;
+  transform:translateY(-1px);
+}
+</style>
+
 </head>
 <body><div aria-label="SUNSEE 微光合作店家公告" class="sunsee-top-notice" role="note">
 <div class="sunsee-top-notice-inner">
@@ -2534,7 +2569,8 @@ const SHOP_DATA=[
    img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=1200&q=80',
    detailPage:'https://sunsee.tw/shops/pindouhua/index.html',
    embedInstagram:true,
-   embedUrl:'https://www.instagram.com/p/DYlnfMLpRDd/'
+   embedUrl:'https://www.instagram.com/p/DYlnfMLpRDd/',
+   uberEats:'https://www.ubereats.com/tw/store/%E5%93%81%E8%B1%86%E8%8A%B1/svD5CrC4VQqIhr3JFOmjIw'
  },
  {
    city:'桃園市',
@@ -2592,12 +2628,19 @@ const SHOP_DATA=[
    status:'愛心餐／愛心份量與合作方式請直接與店家聯繫確認',
    address:'台北市內湖區內湖路一段737巷29號',
    contact:'聯絡方式：請洽店家',
-   ig:'',
-   igHandle:'',
-   photoLink:'',
+   ig:'https://www.instagram.com/eason800830/',
+   igHandle:'@Eason800830',
+   photoLink:'https://www.instagram.com/reel/DdWGC8OKEk0/',
    img:'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=80',
-   detailPage:'https://sunsee.tw/shops/toast-neihu/index.html',
-   embedInstagram:false
+   detailPage:'https://sunsee.tw/shops/toast/index.html',
+   embedInstagram:true,
+   embedUrl:'https://www.instagram.com/reel/DdWGC8OKEk0/',
+   threads:'https://www.threads.net/@eason800830',
+   threadsHandle:'@Eason800830',
+   facebook:'https://www.facebook.com/search/top?q=%E5%BE%90%E7%BE%A9%E7%9B%9B',
+   facebookHandle:'徐義盛',
+   uberEats:'https://www.ubereats.com/store-browse-uuid/58c8827b-2856-5a71-a7ec-0dcc16335529?diningMode=DELIVERY',
+   foodpanda:'https://foodpanda.go.link/lD0qH'
  },
  {
    city:'台中市',
@@ -2719,7 +2762,11 @@ function render(city=activeCity){
             <div class="status">✦ ${s.status}</div>
             <div class="shop-actions all-shop-actions">
               <a class="shop-mini-btn detail-direct" href="${s.detailPage}">✦ 查看微光頁</a>
-              ${s.ig?`<a class="shop-mini-btn ig-direct" href="${s.ig}" target="_blank" rel="noopener">◎ 官方 IG｜${s.igHandle} →</a>`:''}
+              ${s.ig?`<a class="shop-mini-btn ig-direct" href="${s.ig}" target="_blank" rel="noopener">◎ IG｜${s.igHandle} →</a>`:''}
+              ${s.threads?`<a class="shop-mini-btn social-direct" href="${s.threads}" target="_blank" rel="noopener">◌ Threads｜${s.threadsHandle}</a>`:''}
+              ${s.facebook?`<a class="shop-mini-btn social-direct" href="${s.facebook}" target="_blank" rel="noopener">f Facebook｜${s.facebookHandle}</a>`:''}
+              ${s.uberEats?`<a class="shop-mini-btn order-direct" href="${s.uberEats}" target="_blank" rel="noopener">Uber Eats｜訂購</a>`:''}
+              ${s.foodpanda?`<a class="shop-mini-btn order-direct" href="${s.foodpanda}" target="_blank" rel="noopener">foodpanda｜訂購</a>`:''}
             </div>
           </div>
         </div>
