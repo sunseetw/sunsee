@@ -243,6 +243,16 @@ textarea{min-height:100px;resize:vertical}
 }
 
 </style>
+<!-- Google Analytics（G-X5X213H07P）：只在 sunsee.tw 正式網域送出，本機預覽不計入 -->
+<script>
+(function(){
+  var h=location.hostname;
+  if(h!=='sunsee.tw'&&h!=='www.sunsee.tw')return;
+  var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-X5X213H07P';document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;
+  gtag('js',new Date());gtag('config','G-X5X213H07P');
+})();
+</script>
 </head>
 <body>
 <div class="topbar">
@@ -570,6 +580,37 @@ textarea{min-height:100px;resize:vertical}
     <div class="support-card"><b>03</b><strong>分享給朋友</strong><p class="small">讓更多人看見這間店與這束微光。</p></div>
    </div>
  </div>
+
+<!-- SUNSEE 微光支持（與其他店家頁共用同一個 Supabase 計數，shop_slug=marche） -->
+<style>
+.sgs{margin:26px auto 0;max-width:1120px;padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,#f6e9d7,#fffaf4);border:1px solid rgba(185,134,73,.22);display:grid;grid-template-columns:auto 1fr auto;gap:13px;align-items:center;font-family:inherit;color:#3f2c21;box-sizing:border-box}
+.sgs *{box-sizing:border-box}
+.sgs-heart{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#bd8740;font-size:19px}
+.sgs-copy strong{display:block;font-size:21px;line-height:1.2}.sgs-copy small{display:block;color:#86705f;font-size:12px}
+.sgs-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.sgs-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;border:1px solid rgba(185,134,73,.35);background:#fffdf9;color:#3f2c21;font:inherit;font-size:14px;cursor:pointer;transition:box-shadow .4s,background .4s}
+.sgs-btn:hover{box-shadow:0 0 0 4px rgba(216,193,148,.25)}
+.sgs-like.is-liked{background:linear-gradient(135deg,#b98649,#d9ae72);color:#fff;border-color:transparent;cursor:default}
+.sgs-msg{grid-column:1/-1;text-align:right;min-height:14px;color:#86705f;font-size:12px}
+@media(max-width:640px){.sgs{grid-template-columns:auto 1fr}.sgs-actions{grid-column:1/-1;justify-content:stretch}.sgs-btn{flex:1;justify-content:center}.sgs-msg{text-align:left}}
+</style>
+<div class="sgs" id="sunseeGlowSupport">
+ <span class="sgs-heart" aria-hidden="true">♥</span>
+ <div class="sgs-copy"><strong><span id="sgsCount">0</span> 人</strong><small>正在支持這束微光</small></div>
+ <div class="sgs-actions"><button class="sgs-btn sgs-like" id="sgsLikeBtn" type="button"><span class="sgs-h">♡</span><span class="sgs-l">我也支持這束微光</span></button><button class="sgs-btn sgs-share" id="sgsShareBtn" type="button">↗ 分享這間微光店家</button></div>
+ <div class="sgs-msg" id="sgsMsg" aria-live="polite"></div>
+</div>
+<script>
+(function(){
+ const U='https://uszidbjavvxymgferssw.supabase.co',K='sb_publishable_CX2vRUSqJRXnV9qY1mVxVg_eV-vNDvW',S='marche',D='sunsee_supported_'+S;
+ const c=document.getElementById('sgsCount'),b=document.getElementById('sgsLikeBtn'),m=document.getElementById('sgsMsg');
+ async function load(){try{const r=await fetch(U+'/rest/v1/microglow_support?shop_slug=eq.'+encodeURIComponent(S)+'&select=support_count',{headers:{apikey:K,Authorization:'Bearer '+K}});const d=await r.json();c.textContent=(d&&d[0]&&d[0].support_count!=null)?d[0].support_count:0;}catch(e){m.textContent='支持數字稍後重新整理即可再試。';}}
+ function paint(x){b.classList.toggle('is-liked',x);b.querySelector('.sgs-h').textContent=x?'♥':'♡';b.querySelector('.sgs-l').textContent=x?'已支持這束微光':'我也支持這束微光';b.disabled=x;}
+ let liked=false;try{liked=localStorage.getItem(D)==='1';}catch(e){}paint(liked);load();
+ if(!liked)b.addEventListener('click',async()=>{b.disabled=true;m.textContent='正在送出你的支持…';try{const r=await fetch(U+'/rest/v1/rpc/increment_microglow_support',{method:'POST',headers:{apikey:K,Authorization:'Bearer '+K,'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({p_shop_slug:S})});if(!r.ok)throw new Error();c.textContent=await r.json();try{localStorage.setItem(D,'1');}catch(e){}paint(true);m.textContent='謝謝你。這一點支持，也會讓善意更容易被看見。';}catch(e){b.disabled=false;m.textContent='目前送出失敗，請稍後再試。';}});
+ const sb=document.getElementById('sgsShareBtn');if(sb)sb.addEventListener('click',async()=>{const d={title:'Marché Pâtisserie｜SUNSEE 微光合作店家',text:'一起看見這間微光店家。',url:window.location.href};try{if(navigator.share)await navigator.share(d);else if(navigator.clipboard){await navigator.clipboard.writeText(window.location.href);sb.textContent='✓ 已複製連結';setTimeout(()=>sb.textContent='↗ 分享這間微光店家',1800);}}catch(e){}});
+})();
+</script>
 </section>
 
 <section style="padding-top:0">
