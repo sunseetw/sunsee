@@ -203,3 +203,18 @@ window.SUNSEE_SHOPS=[
     website:'https://www.tissa.tw/commercialdistrict/shop_detail.php?mtid=88797544&sd=108',
     img:'https://tb-static.uber.com/prod/image-proc/processed_images/e56240410643ae2cbbef42a6aeec0176/dfe73df3a8123af1971eabf3eeff9ac1.jpeg',coverAlt:'雞禽食舍官方外送平台店家封面照片'});
 })();
+
+/* 線上微光店家（沒有實體門市，不參與附近定位；縣市篩選歸在「線上店家」） */
+window.SUNSEE_SHOPS.push(
+  {city:'線上店家',online:true,name:'琉謐之光',type:'客製化水晶手環・線上訂購',
+   desc:'專屬客製化，每一條手環都是獨一無二。提供生命靈數手環、流年手環、脈輪手環等設計。',
+   status:'公益合作與支持方式請直接向店家確認',address:'',contact:'Instagram 私訊 @luminous_crystal_2025',
+   ig:'https://www.instagram.com/luminous_crystal_2025/',website:'https://tw.shp.ee/TTsMJkx',websiteLabel:'線上賣場',
+   img:'assets/img/shop-luminous-crystal.webp',coverAlt:'琉謐之光 黑色水晶手環商品照片'},
+  {city:'線上店家',online:true,name:'朵森VS惠享購',type:'線上購物・生活用品',
+   desc:'惠享購生活網（緯祥國際有限公司）線上商店，商品包含天絲蜂巢乳膠枕等生活用品。',
+   status:'公益合作與支持方式請直接向店家確認',address:'',
+   contact:'客服電話 0960341015｜LINE @gft8436h｜週一至週五 11:00–20:00（不含國定假日）',
+   fb:'https://www.facebook.com/WeiXiangGO8888/',website:'https://weixianggo.cashier.ecpay.com.tw/',websiteLabel:'線上商店',
+   img:'https://img.cashier.ecpay.com.tw/image/2026/09/14/0_04d5eff0a353c5cddee65086e4259d4b9cd3f603.png',imgPos:'82% center',coverAlt:'惠享購 天絲蜂巢乳膠枕商品照片'}
+);

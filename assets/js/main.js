@@ -166,7 +166,7 @@ const brandOf = s => s.brand || s.name;
 /* 首屏數字 */
 (function stats(){
   const brands = new Set(SHOP_DATA.map(brandOf));
-  const cities = new Set(SHOP_DATA.map(s => s.city));
+  const cities = new Set(SHOP_DATA.filter(s => !s.online).map(s => s.city));
   document.getElementById('statShops').textContent = brands.size;
   document.getElementById('statSpots').textContent = SHOP_DATA.length;
   document.getElementById('statCities').textContent = cities.size;
@@ -224,14 +224,14 @@ function render(city){
     if (s.detailPage) actions.push(`<a class="chip main" href="${esc(s.detailPage)}">店家介紹</a>`);
     if (s.ig) actions.push(`<a class="chip" href="${esc(s.ig)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(s.name)} 官方 Instagram">${icon.ig}IG</a>`);
     if (s.fb) actions.push(`<a class="chip" href="${esc(s.fb)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(s.name)} 官方 Facebook">${icon.fb}Facebook</a>`);
-    if (s.website) actions.push(`<a class="chip" href="${esc(s.website)}" target="_blank" rel="noopener noreferrer">${icon.web}店家資訊</a>`);
+    if (s.website) actions.push(`<a class="chip${s.online && !s.detailPage ? ' main' : ''}" href="${esc(s.website)}" target="_blank" rel="noopener noreferrer">${icon.web}${esc(s.websiteLabel || '店家資訊')}</a>`);
     if (s.orderPage) actions.push(`<a class="chip" href="${esc(s.orderPage)}">企業／大量訂購</a>`);
     const dist = nearbyMode && s.distance != null ? `<span class="distance-pill">${s.branches ? '最近門市 ' : ''}${formatDistance(s.distance)}</span>` : '';
     const details = s.branches
       ? `<details class="shop-details"><summary>查看 ${s.branches.length} 間合作門市與地址</summary><p>${esc(s.desc)}</p><ul class="branches">${s.branches.map(b => `<li><strong>${esc(b.name.replace(s.brand + '｜',''))}</strong>（${esc(b.city)}）<br>${esc(b.address)}${nearbyMode && b.distance != null ? ' · ' + formatDistance(b.distance) : ''}</li>`).join('')}</ul><p style="font-size:12.5px;color:var(--muted)">${esc(s.status)}｜${esc(s.contact)}</p></details>`
-      : `<details class="shop-details"><summary>店家資訊與支持方式</summary><p>${esc(s.desc)}</p><dl><dt>支持方式</dt><dd>${esc(s.status)}</dd><dt>地址</dt><dd>${esc(s.address)}</dd><dt>聯絡</dt><dd>${esc(s.contact)}</dd></dl>${s.embed && s.embedUrl ? `<div class="ig-stage ig-lazy-embed" data-instagram-permalink="${esc(s.embedUrl)}"></div>` : ''}</details>`;
+      : `<details class="shop-details"><summary>店家資訊與支持方式</summary><p>${esc(s.desc)}</p><dl><dt>支持方式</dt><dd>${esc(s.status)}</dd>${s.address ? `<dt>地址</dt><dd>${esc(s.address)}</dd>` : '<dt>購買方式</dt><dd>線上訂購</dd>'}<dt>聯絡</dt><dd>${esc(s.contact)}</dd></dl>${s.embed && s.embedUrl ? `<div class="ig-stage ig-lazy-embed" data-instagram-permalink="${esc(s.embedUrl)}"></div>` : ''}</details>`;
     return `<article class="shop-card reveal">
-      <a class="shop-cover" href="${esc(s.detailPage || social)}"${s.detailPage ? '' : ' target="_blank" rel="noopener noreferrer"'} aria-label="${esc(s.name)}"><span class="shop-city">${esc(s.city)}</span>${dist}<img src="${esc(s.img)}" alt="${esc(s.coverAlt || s.name)}" loading="lazy" decoding="async" data-name="${esc(s.name)}"></a>
+      <a class="shop-cover" href="${esc(s.detailPage || social)}"${s.detailPage ? '' : ' target="_blank" rel="noopener noreferrer"'} aria-label="${esc(s.name)}"><span class="shop-city">${esc(s.city)}</span>${dist}<img src="${esc(s.img)}"${s.imgPos ? ` style="object-position:${esc(s.imgPos)}"` : ''} alt="${esc(s.coverAlt || s.name)}" loading="lazy" decoding="async" data-name="${esc(s.name)}"></a>
       <div class="shop-body"><h3>${esc(s.name)}</h3><p class="shop-type">${esc(s.type)}</p><div class="shop-actions">${actions.join('')}</div>${details}</div>
     </article>`;
   }).join('');
@@ -270,7 +270,7 @@ function setupLazyInstagramEmbeds(){
 
 /* 附近微光：沿用原本 Nominatim 查詢與瀏覽器快取（不儲存使用者定位） */
 async function geocodeShop(shop){
-  if (Number.isFinite(shop.lat) && Number.isFinite(shop.lng)) return false;
+  if (!shop.address || (Number.isFinite(shop.lat) && Number.isFinite(shop.lng))) return false;
   const cacheKey = 'sunsee_geo_' + shop.address;
   try { const c = JSON.parse(localStorage.getItem(cacheKey) || 'null'); if (c && Number.isFinite(c.lat)) { shop.lat = c.lat; shop.lng = c.lng; return false; } } catch(_){}
   const q = encodeURIComponent(shop.address.replace(/（.*?）/g,'').replace(/[0-9]+F\b/gi,''));
@@ -299,7 +299,7 @@ nearbyBtn.addEventListener('click', () => {
     nearbyBtn.disabled = false; nearbyBtn.classList.remove('is-loading'); nearbyBtn.classList.add('is-active');
     nearbyBtn.innerHTML = '<span class="nearby-btn-icon">✓</span><span>已依距離排序</span>';
     filtersBox.querySelectorAll('.filter-btn').forEach(b => { const on = b.dataset.city === '全部'; b.classList.toggle('active', on); b.setAttribute('aria-pressed', String(on)); });
-    const located = SHOP_DATA.filter(s => Number.isFinite(s.lat)).length;
+    const located = SHOP_DATA.filter(s => Number.isFinite(s.lat)).length;   // 線上店家沒有座標，排在最後
     setStatusHTML('已找到你的附近微光', `${located} 個據點已依由近到遠排序。`);
     render('全部');
     grid.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'start'});
