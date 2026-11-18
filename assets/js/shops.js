@@ -210,6 +210,7 @@ window.SUNSEE_SHOPS.push(
    desc:'專屬客製化，每一條手環都是獨一無二。提供生命靈數手環、流年手環、脈輪手環等設計。',
    status:'公益合作與支持方式請直接向店家確認',address:'',contact:'Instagram 私訊 @luminous_crystal_2025',
    ig:'https://www.instagram.com/luminous_crystal_2025/',website:'https://tw.shp.ee/TTsMJkx',websiteLabel:'線上賣場',
+   detailPage:'/people/luminous/#luminous',
    img:'assets/img/shop-luminous-crystal.webp',coverAlt:'琉謐之光 黑色水晶手環商品照片'},
   {city:'線上店家',online:true,name:'朵森VS惠享購',type:'線上購物・生活用品',
    desc:'惠享購生活網（緯祥國際有限公司）線上商店，商品包含天絲蜂巢乳膠枕等生活用品。',
