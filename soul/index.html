@@ -10,6 +10,7 @@
 <meta property="og:description" content="在一個靈魂身上看見自己，在放下之中讓靈魂解脫。GA·E Mika × SUNSEE。">
 <meta property="og:url" content="https://sunsee.tw/soul/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&text=%E9%9D%88%E9%AD%82%E5%AF%84%E5%BF%B5%E6%89%80&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <!-- Google Analytics（G-X5X213H07P）：只在 sunsee.tw 正式網域送出，本機預覽不計入 -->
 <script>
@@ -46,7 +47,7 @@ a{color:inherit;text-decoration:none}
 .bar.solid{background:rgba(18,17,16,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,164,92,.18)}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
 .mark{display:flex;align-items:center;gap:14px}
-.seal{margin-left:6px;width:40px;height:40px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);color:var(--gold);font-size:18px;transform:rotate(45deg)}
+.seal{font-family:"Yuji Boku",var(--serif);margin-left:6px;width:40px;height:40px;border:1px solid var(--gold);display:grid;place-items:center;font-family:var(--serif);color:var(--gold);font-size:18px;transform:rotate(45deg)}
 .seal span{transform:rotate(-45deg)}
 .mark b{display:block;font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:.3em}
 .mark small{display:block;font-size:10.5px;letter-spacing:.32em;color:var(--stone)}
@@ -63,9 +64,14 @@ a{color:inherit;text-decoration:none}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,17,16,.2),transparent 30%,transparent 70%,var(--night));pointer-events:none}
 .hero .wrap{position:relative;z-index:2;padding:120px 0 90px}
 .hero .kicker{opacity:0;animation:rise 1.4s var(--ease) .2s forwards}
-.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(54px,9vw,128px);line-height:1.08;letter-spacing:.14em;margin:22px 0 28px;color:var(--ivory)}
-.hero h1 span{display:inline-block;opacity:0;transform:translateY(30px);filter:blur(8px);animation:rise 1.6s var(--ease) forwards}
-.hero h1 span:nth-child(2){animation-delay:.12s}.hero h1 span:nth-child(3){animation-delay:.24s}.hero h1 span:nth-child(4){animation-delay:.36s}.hero h1 span:nth-child(5){animation-delay:.48s}
+.hero h1{font-family:"Yuji Boku",var(--serif);font-weight:400;font-size:clamp(60px,10vw,144px);line-height:1.1;letter-spacing:.06em;margin:18px 0 26px;color:var(--ivory)}
+.hero h1 span{position:relative;display:inline-block;--d:0s;color:transparent;background:linear-gradient(115deg,#f5f1e8 0%,#f5f1e8 38%,#f3dc9f 46%,#fff6dc 50%,#e2c27a 54%,#f5f1e8 62%,#f5f1e8 100%);background-size:320% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;opacity:0;clip-path:inset(0 0 100% 0);filter:blur(10px);transform:translateY(-6px) rotate(-2deg);animation:ink 1.9s cubic-bezier(.3,.7,.2,1) var(--d) forwards,shine 7s ease-in-out calc(var(--d) + 2.4s) infinite}
+.hero h1 span:nth-child(2){--d:.28s;transform:translateY(8px) rotate(1.5deg)}.hero h1 span:nth-child(3){--d:.56s;transform:translateY(-4px) rotate(-1deg)}.hero h1 span:nth-child(4){--d:.84s;transform:translateY(6px) rotate(2deg)}.hero h1 span:nth-child(5){--d:1.12s;transform:translateY(-2px) rotate(-1.5deg)}
+.hero h1 span::after{content:"";position:absolute;left:10%;right:10%;bottom:-8%;height:40%;background:radial-gradient(closest-side,rgba(201,164,92,.35),transparent);filter:blur(12px);opacity:0;animation:pool 2.4s ease-out calc(var(--d) + .6s) forwards;z-index:-1}
+@keyframes ink{0%{opacity:0;clip-path:inset(0 0 100% 0);filter:blur(10px)}35%{opacity:1}100%{opacity:1;clip-path:inset(-10% -10% -10% -10%);filter:blur(0)}}
+@keyframes shine{0%,40%{background-position:100% 0}75%,100%{background-position:0 0}}
+@keyframes pool{to{opacity:1}}
+
 .hero .line{width:0;height:1px;background:linear-gradient(90deg,var(--gold),transparent);animation:grow 2s var(--ease) .9s forwards}
 .hero .lede{max-width:620px;margin:28px 0 0;font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);line-height:1.8;color:var(--gold-2);opacity:0;animation:rise 1.4s var(--ease) 1s forwards}
 .hero .sub{max-width:560px;margin:16px 0 40px;color:#bdb5a6;font-size:15.5px;opacity:0;animation:rise 1.4s var(--ease) 1.2s forwards}
@@ -215,6 +221,7 @@ footer .fine{margin-top:34px;padding-top:22px;border-top:1px solid rgba(245,241,
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .hero h1 span,.hero .kicker,.hero .lede,.hero .sub,.cta-row,.rv{opacity:1!important;transform:none!important;filter:none!important}
+  .hero h1 span{clip-path:none!important;color:var(--ivory)!important;background:none!important}
   .hero .line{width:min(420px,70%)}
   #flow,#flow2{display:none}
 }
