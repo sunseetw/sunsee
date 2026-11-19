@@ -391,11 +391,35 @@ footer .fine{margin-top:34px;padding-top:22px;border-top:1px solid rgba(245,241,
       speed: .0025 + Math.random()*.004, phase: Math.random()*6.28,
       width: .6 + Math.random()*1.6, alpha: .18 + Math.random()*.4
     }));
+    /* 煙霧：預先畫好一張不規則柔邊雲團，再讓多個雲團緩慢上升、旋轉、淡入淡出 */
+    const sprite = document.createElement('canvas'); sprite.width = sprite.height = 256;
+    (function(){ const g = sprite.getContext('2d');
+      for (let i = 0; i < 26; i++){
+        const r = 30 + Math.random()*70, x = 128 + (Math.random()-.5)*110, y = 128 + (Math.random()-.5)*90;
+        const rg = g.createRadialGradient(x,y,0,x,y,r);
+        rg.addColorStop(0,'rgba(236,226,206,.16)'); rg.addColorStop(.55,'rgba(226,212,184,.07)'); rg.addColorStop(1,'rgba(226,212,184,0)');
+        g.fillStyle = rg; g.beginPath(); g.arc(x,y,r,0,6.283); g.fill();
+      }
+    })();
+    const smokeN = Math.round((opts.smoke || 0) * ((small || low) ? .5 : 1));
+    const spawn = (p, init) => { p.x = Math.random(); p.y = init ? Math.random() : 1.1 + Math.random()*.2;
+      p.s = (small ? 260 : 380) + Math.random()*(small ? 260 : 480); p.rot = Math.random()*6.283; p.vr = (Math.random()-.5)*.0016;
+      p.vx = (Math.random()-.5)*.00018; p.vy = .00022 + Math.random()*.00034; p.life = init ? Math.random() : 0; p.max = .09 + Math.random()*.12; p.sx = 1.3 + Math.random()*.7; p.sy = .55 + Math.random()*.3; return p; };
+    const puffs = Array.from({length: smokeN}, () => spawn({}, true));
     const dots = Array.from({length: small ? 14 : 30}, () => ({x:Math.random(), y:Math.random(), r:.6+Math.random()*1.6, v:.0002+Math.random()*.0006, p:Math.random()*6.28}));
     function size(){ w = canvas.clientWidth; h = canvas.clientHeight; canvas.width = w*dpr; canvas.height = h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
     function draw(){
       t += 1;
       ctx.clearRect(0,0,w,h);
+      ctx.globalCompositeOperation = 'screen';
+      for (const p of puffs){
+        p.y -= p.vy; p.x += p.vx + Math.sin(t*.004 + p.rot)*.00012; p.rot += p.vr; p.life += .0016;
+        if (p.y < -.4 || p.life > 1) spawn(p, false);
+        const a = Math.sin(Math.min(1, p.life) * Math.PI) * p.max;
+        ctx.save(); ctx.globalAlpha = a; ctx.translate(p.x*w, p.y*h); ctx.rotate(p.rot); ctx.scale(p.sx, p.sy);
+        ctx.drawImage(sprite, -p.s/2, -p.s/2, p.s, p.s); ctx.restore();
+      }
+      ctx.globalAlpha = 1;
       ctx.globalCompositeOperation = 'lighter';
       for (const b of bands){
         const g = ctx.createLinearGradient(0,0,w,0);
@@ -436,8 +460,8 @@ footer .fine{margin-top:34px;padding-top:22px;border-top:1px solid rgba(245,241,
       else if (!document.hidden && inView && !on){ on = true; draw(); }
     });
   }
-  flow(document.getElementById('flow'), {n:7, y0:.28, spread:.5});
-  flow(document.getElementById('flow2'), {n:5, y0:.15, spread:.7});
+  flow(document.getElementById('flow'), {n:7, y0:.28, spread:.5, smoke:16});
+  flow(document.getElementById('flow2'), {n:5, y0:.15, spread:.7, smoke:9});
 })();
 </script>
 </body>
